@@ -18,6 +18,9 @@ const collection = {
 
   // Where does your knowledge come from? A person, a place, a community.
   source: "My family's durian farm in Kampot",
+
+  // Which province is this archive rooted in?
+  province: "Kampot",
 };
 
 export default collection;
