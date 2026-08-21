@@ -1,6 +1,6 @@
 import collection from "../collection.config.js";
 
-const GOLD = "#E8A33D";
+const GOLD = "#FF2ED1";
 
 const styles = {
   wrap: {
@@ -93,7 +93,7 @@ const styles = {
 export default function Home() {
   return (
     <main style={styles.wrap}>
-      <span style={styles.eyebrow}>🌾 Kampot Durian Archive</span>
+      <span style={styles.eyebrow}>🔥 Kampot Durian Archive (EXPERIMENT)</span>
       <h1 style={styles.title}>{collection.name}</h1>
       <p style={styles.description}>{collection.description}</p>
 
