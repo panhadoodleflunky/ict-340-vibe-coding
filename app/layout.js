@@ -11,10 +11,12 @@ export default function RootLayout({ children }) {
       <body
         style={{
           margin: 0,
-          backgroundColor: "#14181F",
+          background:
+            "radial-gradient(circle at 15% 0%, #2A2113 0%, #14181F 45%), radial-gradient(circle at 85% 100%, #241A0E 0%, #14181F 55%), #14181F",
+          backgroundAttachment: "fixed",
           color: "#E8EDF2",
           fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            "'Georgia', 'Iowan Old Style', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
           minHeight: "100vh",
         }}
       >
