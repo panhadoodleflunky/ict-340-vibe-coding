@@ -1,7 +1,6 @@
-"use client";
-
-import { useEffect } from "react";
 import collection from "../collection.config.js";
+import EntryCard from "../components/EntryCard.js";
+import Reveal from "../components/Reveal.js";
 
 /* Spiky durian husk mark, drawn as a ring of triangles. */
 function DurianGlyph({ size = 18 }) {
@@ -23,9 +22,11 @@ function DurianGlyph({ size = 18 }) {
   );
 }
 
-const TILES = [
-  { label: "Curated by", value: collection.curator },
-  { label: "Source", value: collection.source },
+/* Frontispiece facts — the archive's own catalogue header. */
+const MASTHEAD = [
+  { k: "Curator", v: collection.curator },
+  { k: "Province", v: `${collection.province}, Cambodia` },
+  { k: "Source", v: collection.source },
 ];
 
 const SPECS = [
@@ -35,119 +36,190 @@ const SPECS = [
   { h: "Status", p: "In progress. New entries each week." },
 ];
 
-export default function Home() {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) {
-      els.forEach((el) => el.classList.add("in"));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          // Reveal on entry, and also for anything already scrolled past —
-          // a deep link can jump the viewport clean over a section.
-          if (e.isIntersecting || e.boundingClientRect.top < 0) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
+const SAMPLE_ENTRIES = [
+  {
+    title: "The Nose Lies Less Than the Ear",
+    description:
+      "You knock on the shell, and you listen — not tap-tap-tap like a door, more like knuckle against a drum, gentle. If it sounds hollow, it's close. But my mother's rule was always about the smell at the stem, not the sound. She'd say, 'the nose lies less than the ear.' Meaning: sound can fool you, especially with wind or a bad ear day, but if you smell sweetness rising off the stem crack, that fruit is telling the truth.",
+    contributor: "Mother, Kampot Durian Orchard",
+    place: "The orchard, Kampot",
+  },
+  {
+    title: "The Four A.M. Harvest",
+    description:
+      "Last season, first fruit dropped near the stubborn tree, four in the morning, and it woke the dogs before it woke us. You don't cut Monthong — you wait, and the waiting makes you crazy, checking the ground every evening like you lost something. I remember standing there in the dark in my sandals, durian smell already thick in the air before I even found where it fell, and my husband laughing at me for running outside in my sleep shirt. We split it right there on the ground, still warm from the day before. Nobody said anything for a while. Just ate.",
+    contributor: "Mother, Kampot Durian Orchard",
+    place: "Near the old fence line, Kampot",
+  },
+];
 
+/* Drawn from entry 01 — the line the whole method rests on. */
+const PULL_QUOTE = {
+  text: "The nose lies less than the ear.",
+  attribution: "Mother, Kampot Durian Orchard",
+};
+
+function SectionLabel({ no, children }) {
+  return (
+    <p className="sec-label">
+      <span className="sec-no">{no}</span>
+      <span className="sec-rule" aria-hidden="true" />
+      {children}
+    </p>
+  );
+}
+
+export default function Home() {
   return (
     <>
-      <nav className="gnav">
+      <a className="skip" href="#entries">Skip to entries</a>
+
+      <nav className="gnav" aria-label="Section navigation">
         <div className="gnav-inner">
           <span className="gnav-logo">
             <DurianGlyph />
           </span>
-          <a href="#overview">Overview</a>
-          <a href="#orchard" className="hide-sm">The Orchard</a>
-          <a href="#specs" className="hide-sm">Details</a>
+          <span className="gnav-name">{collection.name}</span>
           <span className="gnav-spacer" />
+          <a href="#overview" className="hide-sm">Overview</a>
+          <a href="#orchard" className="hide-sm">Orchard</a>
           <a href="#entries">Entries</a>
         </div>
       </nav>
 
       <header className="hero">
-        <p className="eyebrow">
-          <span className="pulse" />
-          Field notes in progress
-        </p>
-        <h1 className="headline">
-          Kampot
-          <em>Durian</em>
-        </h1>
-        <p className="sub">{collection.description}</p>
-        <div className="cta-row">
-          <a className="btn" href="#entries">Browse the archive</a>
-          <a className="link" href="#orchard">Meet the orchard</a>
+        <div className="inner hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">
+              <span className="pulse" />
+              Field notes in progress
+            </p>
+            <h1 className="headline">
+              Kampot
+              <em>Durian</em>
+            </h1>
+            <div className="hero-rule" aria-hidden="true" />
+            <p className="sub">{collection.description}</p>
+
+            <div className="cta-row">
+              <a className="btn" href="#entries">Browse the archive</a>
+              <a className="link" href="#orchard">Meet the orchard</a>
+            </div>
+          </div>
+
+          <figure className="hero-figure">
+            <img
+              src="/durian-hero.jpg"
+              alt="Durians stacked at market, husks covered in sharp green spikes"
+            />
+            <figcaption>
+              <span className="hero-cap-no">Fig. 01</span>
+              Harvest stacked at market — Kampot
+            </figcaption>
+          </figure>
         </div>
-        <div className="hero-stage">
-          <img
-            src="/durian-hero.jpg"
-            alt="Durians stacked at market, husks covered in sharp green spikes"
-          />
+
+        <div className="inner">
+          <dl className="masthead">
+            {MASTHEAD.map((m) => (
+              <div className="mast-item" key={m.k}>
+                <dt>{m.k}</dt>
+                <dd>{m.v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </header>
 
-      <section className="section" id="overview">
-        <div className="inner">
-          <div className="bento">
-            {TILES.map((t) => (
-              <article className="tile reveal" key={t.label}>
-                <p className="tile-label">{t.label}</p>
-                <p className="tile-value">{t.value}</p>
-              </article>
-            ))}
-            <article className="tile tile-wide reveal" id="entries">
-              <p className="tile-label">Entries in the archive</p>
-              <p className="stat-num">0</p>
-              <p className="body-copy" style={{ marginTop: 12 }}>
-                For now. Sprint 1 changes that.
+      <main>
+        <section className="section" id="overview">
+          <div className="inner">
+            <Reveal>
+              <SectionLabel no="01">The collection</SectionLabel>
+            </Reveal>
+            <div className="bento">
+              <Reveal as="article" className="tile">
+                <p className="tile-label">Entries recorded</p>
+                <p className="stat-num">{SAMPLE_ENTRIES.length}</p>
+                <p className="body-copy">More arrive each week of the season.</p>
+              </Reveal>
+              <Reveal as="article" className="tile" delay={90}>
+                <p className="tile-label">Gathered from</p>
+                <p className="tile-value">{collection.source}</p>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <section className="band" id="orchard">
+          <img
+            src="/kampot-durian-monument.jpg"
+            alt="The giant durian monument at the roundabout in Kampot, Cambodia"
+          />
+          <div className="band-copy">
+            <Reveal>
+              <SectionLabel no="02">The orchard</SectionLabel>
+              <h2 className="headline-sm">
+                Grown in Kampot.
+                <br />
+                Recorded at home.
+              </h2>
+              <p className="sub">
+                Kampot put a durian at the centre of its roundabout. This archive
+                starts one orchard away — the trees, the seasons, and the people
+                who know them by name.
               </p>
-            </article>
+            </Reveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="band" id="orchard">
-        <img
-          src="/kampot-durian-monument.jpg"
-          alt="The giant durian monument at the roundabout in Kampot, Cambodia"
-        />
-        <div className="band-copy">
-          <h2 className="headline-sm reveal">
-            Grown in Kampot.
-            <br />
-            Recorded at home.
-          </h2>
-          <p className="sub reveal">
-            Kampot put a durian at the centre of its roundabout. This archive
-            starts one orchard away — the trees, the seasons, and the people who
-            know them by name.
-          </p>
-        </div>
-      </section>
+        <section className="quote-section">
+          <Reveal className="inner">
+            <figure className="pull">
+              <blockquote>{PULL_QUOTE.text}</blockquote>
+              <figcaption>{PULL_QUOTE.attribution}</figcaption>
+            </figure>
+          </Reveal>
+        </section>
 
-      <section className="section" id="specs">
-        <div className="inner">
-          <h2 className="headline-sm reveal">The details.</h2>
-          <div className="specs reveal">
-            {SPECS.map((s) => (
-              <div className="spec" key={s.h}>
-                <h3>{s.h}</h3>
-                <p className="body-copy">{s.p}</p>
+        <section className="section" id="entries">
+          <div className="inner">
+            <Reveal>
+              <div className="section-head">
+                <div>
+                  <SectionLabel no="03">The entries</SectionLabel>
+                  <h2 className="headline-sm">In their own words.</h2>
+                </div>
+                <span className="section-count">
+                  {SAMPLE_ENTRIES.length} field notes
+                </span>
               </div>
-            ))}
+            </Reveal>
+            <div className="entry-list">
+              {SAMPLE_ENTRIES.map((entry, i) => (
+                <EntryCard key={entry.title} index={i} {...entry} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="section" id="specs">
+          <div className="inner">
+            <Reveal>
+              <SectionLabel no="04">The details</SectionLabel>
+              <h2 className="headline-sm">How this was made.</h2>
+            </Reveal>
+            <Reveal className="specs">
+              {SPECS.map((s) => (
+                <div className="spec" key={s.h}>
+                  <h3>{s.h}</h3>
+                  <p className="body-copy">{s.p}</p>
+                </div>
+              ))}
+            </Reveal>
+          </div>
+        </section>
+      </main>
 
       <footer className="foot">
         <div className="foot-inner">
@@ -168,9 +240,9 @@ export default function Home() {
           </p>
           <div className="foot-bottom">
             <span>Curated by {collection.curator}</span>
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             <span>{collection.province}, Cambodia</span>
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             <a href="#overview">Back to top</a>
           </div>
         </div>
