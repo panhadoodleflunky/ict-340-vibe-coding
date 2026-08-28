@@ -13,9 +13,12 @@
   --dim: #7E877C;
   --line: rgba(233, 188, 99, 0.14);
   --line-2: rgba(233, 188, 99, 0.32);
-  --mono: var(--font-mono), ui-monospace, "SF Mono", monospace;
-  --serif: var(--font-display), "Iowan Old Style", Georgia, serif;
-  --sans: var(--font-body), -apple-system, "Helvetica Neue", sans-serif;
+  /* Khmer sits in every stack: Latin faces have no Khmer glyphs, so the
+     browser needs somewhere to fall to before it reaches the system. */
+  --khmer: var(--font-khmer), "Noto Sans Khmer", "Khmer OS", sans-serif;
+  --mono: var(--font-mono), ui-monospace, "SF Mono", monospace, var(--khmer);
+  --serif: var(--font-display), "Iowan Old Style", Georgia, serif, var(--khmer);
+  --sans: var(--font-body), -apple-system, "Helvetica Neue", sans-serif, var(--khmer);
   --wrap: 1120px;
   --nav-h: 58px;
 }
@@ -624,6 +627,16 @@ img { max-width: 100%; display: block; }
   max-width: 64ch;
 }
 
+/* Khmer stacks taller than Latin and its vowel signs sit above and below the
+   consonant, so the Latin line height clips them. */
+.entry :lang(km) { font-family: var(--khmer); }
+.entry-body:lang(km) { line-height: 2.05; font-weight: 400; }
+.entry-title:lang(km) {
+  line-height: 1.45;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: 0;
+}
+
 /* Drop cap — the editorial cue that this is a first-person account. */
 .entry-body::first-letter {
   font-family: var(--serif);
@@ -632,6 +645,28 @@ img { max-width: 100%; display: block; }
   line-height: 0.82;
   padding: 6px 12px 0 0;
   color: var(--flesh);
+}
+
+/* A Khmer cluster is several code points; ::first-letter would tear the
+   vowel sign off its consonant. No drop cap there. */
+.entry-body:lang(km)::first-letter {
+  font-family: inherit;
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  color: inherit;
+}
+
+/* Nothing recorded yet for this field. */
+.entry-empty { color: var(--dim); font-style: italic; }
+.entry-empty::first-letter {
+  font-family: inherit;
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  color: inherit;
 }
 
 /* ---------------- specs ---------------- */

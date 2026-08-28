@@ -1,4 +1,9 @@
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import {
+  Instrument_Serif,
+  Inter,
+  JetBrains_Mono,
+  Noto_Sans_Khmer,
+} from "next/font/google";
 import "./globals.css";
 import collection from "../collection.config.js";
 
@@ -24,6 +29,15 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+/* Khmer face. Inter and Instrument Serif carry no Khmer glyphs, so without
+   this any Khmer entry falls through to whatever the device happens to have. */
+const khmer = Noto_Sans_Khmer({
+  subsets: ["khmer"],
+  weight: ["300", "400", "600"],
+  display: "swap",
+  variable: "--font-khmer",
+});
+
 export const metadata = {
   /* Vercel supplies the deploy URL; falls back to local during dev. */
   metadataBase: new URL(
@@ -46,7 +60,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      className={`${display.variable} ${body.variable} ${mono.variable} ${khmer.variable}`}
     >
       <body>{children}</body>
     </html>
