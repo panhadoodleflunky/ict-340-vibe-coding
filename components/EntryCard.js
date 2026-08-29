@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal.js";
 
 /* Khmer block, U+1780–U+17FF. One Khmer character anywhere is enough:
@@ -8,42 +9,57 @@ function lang(text) {
   return KHMER.test(text) ? "km" : undefined;
 }
 
-/* Fields arrive from interviews, so any of them can be missing or blank.
-   A blank string is not the same as a missing one, but on the page both
-   should read as "not recorded" rather than as an empty gap. */
-function value(text, fallback) {
-  const trimmed = typeof text === "string" ? text.trim() : "";
-  return trimmed || fallback;
+/* Cards carry an opening, not the whole entry — the entry page has that.
+   Cutting on a word boundary keeps a mid-word stub off the card. */
+function excerpt(text, limit) {
+  const body = typeof text === "string" ? text.trim() : "";
+  if (body.length <= limit) return body;
+  const cut = body.slice(0, limit);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
 
-/* One archive entry, laid out like a catalogue record: number and
-   provenance first, then the account itself. */
-export default function EntryCard({ index, title, description, contributor, place }) {
-  const number = String(index + 1).padStart(2, "0");
-  const heading = value(title, "Untitled entry");
-  const body = value(description, "");
-  const who = value(contributor, "Contributor not recorded");
-  const where = value(place, "Place not recorded");
+/* One Field Note, in the shape entry-sketch.md defines. `variant` only
+   changes how much of the entry the card shows, so a run of ten cards does
+   not read as one repeated block. */
+export default function EntryCard({ note, variant = "plain", delay = 0 }) {
+  const { slug, figNumber, title, khmerName, body, sources = [], tags = [], status } = note;
+  const limit = variant === "lead" ? 320 : variant === "brief" ? 110 : 200;
 
   return (
-    <Reveal as="article" className="entry">
+    <Reveal as="article" className={`entry entry-${variant}`} delay={delay}>
       <div className="entry-head">
-        <span className="entry-no" aria-hidden="true">
-          {number}
-        </span>
-        <div className="entry-prov">
-          <span className="entry-who" lang={lang(who)}>{who}</span>
-          <span className="entry-place" lang={lang(where)}>{where}</span>
-        </div>
+        <span className="entry-no" aria-hidden="true">{figNumber}</span>
+        {status === "in-progress" ? (
+          <span className="entry-status">In progress</span>
+        ) : null}
       </div>
-      <h3 className="entry-title" lang={lang(heading)}>{heading}</h3>
-      {body ? (
-        <p className="entry-body" lang={lang(body)}>{body}</p>
-      ) : (
-        <p className="entry-body entry-empty">
-          This account has not been transcribed yet.
-        </p>
-      )}
+
+      <h3 className="entry-title">
+        <Link href={`/field-notes/${slug}`} lang={lang(title)}>
+          {title}
+        </Link>
+      </h3>
+      {/* Shown only where a Khmer name is actually documented. */}
+      {khmerName ? <p className="entry-khmer" lang="km">{khmerName}</p> : null}
+
+      <p className="entry-body">{excerpt(body, limit)}</p>
+
+      {tags.length > 0 ? (
+        <ul className="entry-tags">
+          {tags.map((tag) => (
+            <li key={tag} className="entry-tag">{tag}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      <p className="entry-src">
+        <span>
+          {sources.length} {sources.length === 1 ? "source" : "sources"}
+        </span>
+        <Link className="link" href={`/field-notes/${slug}`}>
+          Read the entry
+        </Link>
+      </p>
     </Reveal>
   );
 }

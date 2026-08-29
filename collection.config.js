@@ -11,13 +11,14 @@ const collection = {
   name: "Kampot Durian",
 
   // One sentence: what is this archive, and why does it matter?
-  description: "A living archive of Kampot durian farming, gathered from my family's own orchard.",
+  description:
+    "A field guide to Kampot's durian season — how it grows, what grows there, and what's changing now.",
 
   // Who is building this archive? Your name, as you want it shown.
   curator: "Sovanpanha Nonn",
 
   // Where does your knowledge come from? A person, a place, a community.
-  source: "My family's durian farm in Kampot",
+  source: "Published research, regional reporting, and ASEAN trade standards",
 
   // Which province is this archive rooted in?
   province: "Kampot",

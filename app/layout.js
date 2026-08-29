@@ -52,7 +52,7 @@ export const metadata = {
     description: collection.description,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/durian-hero.jpg", width: 1200, height: 800 }],
+    images: [{ url: "/harvest-ready-to-sell.jpg", width: 2048, height: 1536 }],
   },
 };
 

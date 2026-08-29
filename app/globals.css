@@ -92,7 +92,7 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
-.skip:focus { left: 16px; z-index: 200; }
+.skip:focus-visible { left: 16px; z-index: 200; }
 
 /* ---------------- nav ---------------- */
 
@@ -114,7 +114,7 @@ img { max-width: 100%; display: block; }
   padding: 0 30px;
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 30px;
 }
 
 .gnav-logo { display: flex; align-items: center; color: var(--flesh); flex-shrink: 0; }
@@ -210,7 +210,7 @@ img { max-width: 100%; display: block; }
 .headline {
   font-family: var(--serif);
   font-size: clamp(66px, 8.6vw, 132px);
-  line-height: 0.84;
+  line-height: 0.95;
   font-weight: 400;
   letter-spacing: -0.038em;
   margin: 0;
@@ -560,7 +560,15 @@ img { max-width: 100%; display: block; }
   padding-bottom: 6px;
 }
 
-.entry-list { display: flex; flex-direction: column; gap: 22px; }
+/* Six columns so cards can take different widths — see the variant rules
+   below. Below 900px it collapses to one column and every card is full width. */
+.entry-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+  /* stretch, not start: two cards sharing a row match heights. */
+  align-items: stretch;
+}
 
 .entry {
   position: relative;
@@ -568,6 +576,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--line);
   border-radius: 26px;
   padding: 54px 58px;
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.45s ease, transform 0.45s cubic-bezier(0.28,0.11,0.32,1);
 }
 
@@ -669,6 +679,58 @@ img { max-width: 100%; display: block; }
   color: inherit;
 }
 
+/* Date sits opposite the provenance, at the far edge of the header rule. */
+.entry-date {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+/* The Khmer name of the variety or practice. It sits directly under the
+   English title because the English is the gloss, not the other way round. */
+.entry-khmer {
+  font-family: var(--khmer);
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--flesh);
+  margin: -14px 0 26px;
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 26px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.entry-tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 13px;
+}
+
+.entry-tag:lang(km) {
+  font-family: var(--khmer);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
 /* ---------------- specs ---------------- */
 
 .specs {
@@ -754,6 +816,264 @@ img { max-width: 100%; display: block; }
   .entry-body { font-size: 17px; }
   .entry-body::first-letter { font-size: 50px; }
   .entry-no { font-size: 32px; }
+  /* The header runs out of room for three columns; the date drops under it. */
+  .entry-head { flex-wrap: wrap; }
+  .entry-date { margin-left: 54px; flex-basis: 100%; }
+  .entry-khmer { font-size: 20px; margin-top: -10px; }
   .masthead { margin-top: 38px; gap: 22px; }
   .section-head { margin-bottom: 34px; }
 }
+
+/* ============================================================
+   Field guide — page shells, entry variants, bibliography
+   ============================================================ */
+
+.gnav-home {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* ---------------- page headers ---------------- */
+
+/* Interior pages open on text, not a hero image. */
+.page-head {
+  position: relative;
+  z-index: 2;
+  padding: 116px 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-head .inner { padding-bottom: 64px; }
+.page-head .sub { max-width: 60ch; margin-top: 22px; }
+
+/* ---------------- reading column ---------------- */
+
+/* Long-form prose wants a narrower measure than the full grid. */
+.reading { max-width: 720px; }
+
+.reading-body {
+  font-family: var(--sans);
+  font-size: 19px;
+  line-height: 1.78;
+  font-weight: 300;
+  letter-spacing: -0.009em;
+  color: var(--muted);
+  margin: 0 0 38px;
+}
+
+.reading-body a { color: var(--flesh); text-decoration-thickness: 1px; }
+.reading .tile-label { margin-top: 46px; }
+.reading > .reveal:first-child .tile-label { margin-top: 0; }
+
+.note-foot {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  color: var(--dim);
+  font-size: 15px;
+}
+
+.note-foot a { color: var(--flesh); }
+
+/* ---------------- entry card variants ---------------- */
+
+.entry-head { align-items: center; }
+
+.entry-lead, .entry-plain { grid-column: span 6; }
+/* Two brief cards sit side by side, which is what breaks the run of
+   identical full-width blocks. */
+.entry-brief { grid-column: span 3; }
+.entry-lead .entry-title { font-size: clamp(38px, 5.4vw, 64px); }
+.entry-brief { padding: 40px 40px; }
+.entry-brief .entry-title { font-size: clamp(26px, 2.6vw, 34px); max-width: 15ch; }
+.entry-brief .entry-body { font-size: 17px; }
+/* No drop cap on the short cards — the cap outgrew the excerpt. */
+.entry-brief .entry-body::first-letter {
+  font-family: inherit;
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  color: inherit;
+}
+
+.entry-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.entry-title a:hover { color: var(--flesh); }
+
+.entry-fig {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.entry-status {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--leaf);
+  border: 1px solid rgba(76, 184, 120, 0.34);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin-left: auto;
+}
+
+.entry-status-block {
+  display: inline-block;
+  margin: 0 0 28px;
+  letter-spacing: 1.2px;
+}
+
+.entry-src {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  /* auto top margin: the footer sinks to the bottom of the card, so two
+     cards sharing a row line up along it however their bodies differ. */
+  margin: auto 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ---------------- single entry page ---------------- */
+
+.entry-khmer-lg { font-size: 30px; margin: -6px 0 30px; }
+
+.entry-figure { margin: 0 0 40px; }
+.entry-figure img { border-radius: 18px; border: 1px solid var(--line); }
+
+.entry-figure figcaption {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.entry-sources {
+  margin: 10px 0 40px;
+  padding: 34px 36px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.entry-sources ul { margin: 18px 0 22px; padding-left: 20px; }
+
+.entry-sources li {
+  font-size: 16px;
+  line-height: 1.62;
+  font-weight: 300;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.entry-sources li::marker { color: var(--flesh); }
+
+.entry-next {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 56px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.entry-next > a:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.entry-next-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.06;
+  color: var(--cream);
+  transition: color 0.2s ease;
+}
+
+.entry-next > a:first-child:hover .entry-next-title { color: var(--flesh); }
+
+/* ---------------- bibliography ---------------- */
+
+.biblio { list-style: none; margin: 0; padding: 0; }
+
+.biblio li {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.biblio-name {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: var(--flesh);
+}
+
+.biblio-note {
+  font-size: 16px;
+  line-height: 1.66;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.biblio-note a { color: var(--cream); }
+
+/* ---------------- region figures ---------------- */
+
+.stat-sm { font-size: clamp(30px, 3.4vw, 44px); margin: 10px 0 12px; }
+
+@media (max-width: 900px) {
+  .entry-list { grid-template-columns: 1fr; }
+  .entry-lead, .entry-plain, .entry-brief { grid-column: auto; }
+  .entry-brief { padding: 54px 58px; }
+}
+
+@media (max-width: 734px) {
+  .page-head { padding: 84px 22px 0; }
+  .page-head .inner { padding-bottom: 44px; }
+  .entry-brief { padding: 36px 28px; }
+  .entry-sources { padding: 26px 24px; }
+  .entry-khmer-lg { font-size: 24px; }
+}
+
+/* `.section-count` is grey metadata, but on the home page it is also a link.
+   It is defined after `.link`, so without this it won the colour. */
+a.section-count { color: var(--flesh); }
+a.section-count:hover { text-decoration: underline; }
+
+/* ---------------- not found ---------------- */
+
+.nf { padding: 150px 30px; }
+.nf .headline-sm { margin-bottom: 22px; }
+.nf .cta-row { margin-top: 34px; }
