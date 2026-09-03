@@ -18,7 +18,8 @@ const collection = {
   curator: "Sovanpanha Nonn",
 
   // Where does your knowledge come from? A person, a place, a community.
-  source: "Published research, regional reporting, and ASEAN trade standards",
+  source:
+    "Published research, regional reporting, ASEAN trade standards, and Kampot growers asked directly",
 
   // Which province is this archive rooted in?
   province: "Kampot",

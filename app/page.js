@@ -12,7 +12,7 @@ import SectionLabel from "../components/SectionLabel.js";
 const MASTHEAD = [
   { k: "Compiled by", v: collection.curator },
   { k: "Province", v: `${collection.province}, Cambodia` },
-  { k: "Method", v: "Published research and reporting" },
+  { k: "Method", v: "Published research, and growers asked directly" },
 ];
 
 /* Three entries that between them cover the whole guide: a native variety,
@@ -59,12 +59,12 @@ export default function Home() {
 
           <figure className="hero-figure">
             <img
-              src="/harvest-ready-to-sell.jpg"
-              alt="Several hundred harvested durians laid out on tarpaulins between the trees, a pickup truck waiting behind them"
+              src="/tree-in-fruit.jpg"
+              alt="Durian fruit hanging on the tree, Kampot"
             />
             <figcaption>
               <span className="hero-cap-no">Kampot</span>
-              A season's harvest, laid out between the trees
+              Fruit on the tree — the curator's own photograph
             </figcaption>
           </figure>
         </div>
@@ -156,7 +156,7 @@ export default function Home() {
               <p className="sub">
                 Kampot put a durian at the centre of its roundabout. The fruit
                 behind it comes largely from Teuk Chhou — river-laid soil,
-                roughly 1,193 hectares, and a season now shifting with the rain.
+                roughly 1,300 hectares, and a season now shifting with the rain.
               </p>
               <p className="cta-row">
                 <Link className="link" href="/region">Read the region</Link>

@@ -31,7 +31,11 @@ export default function About() {
         <div className="inner">
           <SectionLabel no="01">About the Project</SectionLabel>
           <h1 className="headline-sm">A compiled record, not a memoir.</h1>
-          <p className="sub">{collection.description}</p>
+          <p className="sub">
+            This site exists because most of what's true about Kampot durian
+            hasn't been written down anywhere in English. Where it has, we
+            checked it.
+          </p>
         </div>
       </header>
 
@@ -52,12 +56,17 @@ export default function About() {
             <Reveal>
               <h2 className="tile-label">Method</h2>
               <p className="reading-body">
-                {method} It is secondary research. No interviews were conducted
-                for it, and nothing here is presented as personal testimony —
-                where a published source quotes a grower, this guide paraphrases
-                and credits the source rather than reproducing the quote or
-                putting words in anyone's mouth. Every entry lists what it
-                rests on, and the full bibliography is on{" "}
+                {method} Most of it is secondary research: where a published
+                source quotes a grower, this guide paraphrases and credits the
+                source rather than reproducing the quote or putting words in
+                anyone's mouth. The exception is the curator's own family, who
+                grow durian in Kampot and answered questions directly for this
+                project — on reading ripeness, on why Sadong Kit is rarely
+                planted, and on what the last few seasons of heat have done to
+                their trees. That material is marked as family knowledge on the
+                entries that use it, and kept separate from the published
+                citations rather than dressed up as one. Every entry lists what
+                it rests on, and the full bibliography is on{" "}
                 <Link href="/sources">Sources &amp; Credits</Link>.
               </p>
             </Reveal>
@@ -65,12 +74,15 @@ export default function About() {
             <Reveal>
               <h2 className="tile-label">What is missing</h2>
               <p className="reading-body">
-                {open} of the {fieldNotes.length} entries are marked in
-                progress. Cambodia's own durian varieties are thinly documented
-                in English — Sadong Kit appears in the official ASEAN trade
-                standard and almost nowhere else — and the climate reporting is
-                recent enough that it has not settled. Those gaps are left
-                visible on purpose.
+                {open} of the {fieldNotes.length} entries {open === 1 ? "is" : "are"}{" "}
+                marked in progress. Cambodia's own durian varieties are thinly
+                documented in English — Sadong Kit appears in the official ASEAN
+                trade standard and almost nowhere else, and what this guide can
+                say beyond that comes from growers rather than from a paper. The
+                climate reporting is recent enough that it has not settled. The
+                horticultural research behind the flowering and fruit-development
+                figures is cited generically, without specific papers. Those gaps
+                are left visible on purpose.
               </p>
             </Reveal>
 
@@ -94,9 +106,10 @@ export default function About() {
                 been.
               </p>
               <p className="reading-body">
-                Worth saying plainly, though: nothing here comes from my family.
-                Every entry is compiled from published sources, and none of it
-                is testimony. If that changes, it will say so on the entry.
+                Worth saying plainly: most of this is compiled from published
+                sources, not from my family. Where it does come from them, the
+                entry says so — and it is credited as family knowledge, not as
+                a citation it isn't.
               </p>
             </Reveal>
           </div>
