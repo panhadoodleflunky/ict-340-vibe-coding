@@ -39,12 +39,41 @@ export const sourceGroups = [
         url: "https://www.thestar.com.my/aseanplus/aseanplus-news/2025/06/17/durian-farmers-in-north-eastern-cambodia-win-local-hearts-eye-global-markets",
       },
       {
-        name: "Khmer Times / FreshPlaza, May 2025",
-        note: "The Chinese ambassador's visit to a Kampot farm and his remarks on Ov Khak. Cited from research notes; a direct link has not yet been re-confirmed.",
+        name: "FreshPlaza, May 2025",
+        note: "“China seeks more Cambodian Au Khak durians.” Source for Fig. 04: the Chinese ambassador's Kampot farm visit and his remark that Ov Khak is “the best durian in the world.”",
+        url: "https://www.freshplaza.com/asia/article/9731346/china-seeks-more-cambodian-au-khak-durians/",
+      },
+      {
+        name: "Cambodianess",
+        note: "“Chinese Authorities Approve Export of Fresh Durian from Cambodia to China.” Source for Fig. 11: the 17 April 2025 phytosanitary protocol and the 112 orchards / 30 packing facilities approved by China's customs authority (GACC).",
+        url: "https://cambodianess.com/article/chinese-authorities-approve-export-of-fresh-durian-from-cambodia-to-china",
+      },
+      {
+        name: "Agence Kampuchea Presse (AKP), 2026",
+        note: "“Cambodia's Fresh Durian Exports to China Reach 5,738 Tonnes.” Source for Fig. 11: the January–July 2026 export volume, the year-on-year increase, and the Laos overland route cutting transit from 15–20 days by sea to about five, per MAFF spokesperson Khim Finan.",
+        url: "https://www.akp.gov.kh/post/detail/376689",
+      },
+      {
+        name: "VOA News, 18 February 2016",
+        note: "“Cambodia's Kampot Pepper Wins Coveted EU Protection.” Source for Fig. 08: Kampot pepper's 2016 EU Geographical Indication status.",
+        url: "https://www.voanews.com/a/ap-cambodia-kampot-pepper-wins-coveted-eu-protection/3215893.html",
       },
       {
         name: "Phnom Penh Post",
         note: "Profile of a Cambodian durian farmer, and wider industry context.",
+      },
+    ],
+  },
+  {
+    heading: "Family and community knowledge",
+    items: [
+      {
+        name: "The curator's family, Kampot durian growers",
+        note: "Khmer vocabulary used in the field — the knock test, ripe/unripe/overripe, the dry season, dropped vs. cut fruit, grafting, orchard, grower, middleman, and farming community — plus confirmation of ឪខាក់ (Ov Khak), សាដង់កិត (Sadong Kit), and ដើមទុរេន/ដើម (durian tree, full and short form) as spoken locally. Provided directly for this project, not drawn from a publication.",
+      },
+      {
+        name: "The curator's family, Kampot durian growers — grower interview",
+        note: "First-hand answers on reading ripeness (the stem-joint swelling, thorn-tip color change, and the knock-test sound), on why Sadong Kit has become rare to grow and sell (short harvest window, poor transportability once ripe, lower yield, and a post-war shift toward Monthong and Musang King as cash crops), and on adapting to the 2024 drought (extended dry season disrupting flowering, and the resulting irrigation, mulching, and shade-netting changes). Provided directly for this project. The specific grower's name and interview date are not yet recorded — see the entries this backs for where it is used.",
       },
     ],
   },
@@ -87,6 +116,30 @@ export const photoCredits = [
     own: true,
   },
   {
+    file: "durian-flower.png",
+    caption: "Durian flowers in close-up, open at night for their pollinators",
+    author: collection.curator,
+    own: true,
+  },
+  {
+    file: "sadong-kit.jpg",
+    caption: "A Sadong Kit fruit on the tree, in the family's own orchard",
+    author: collection.curator,
+    own: true,
+  },
+  {
+    file: "drought-damage-tree.png",
+    caption: "A drought-stressed durian tree, its leaves browned and dropping",
+    author: collection.curator,
+    own: true,
+  },
+  {
+    file: "teuk-chou-scenic.png",
+    caption: "The Teuk Chhou river at dusk, with the hills behind it",
+    author: collection.curator,
+    own: true,
+  },
+  {
     file: "kampot-durian-monument.jpg",
     caption: "The durian monument at the Kampot roundabout",
     author: "Myrmux",
@@ -98,4 +151,4 @@ export const photoCredits = [
 ];
 
 export const method =
-  "Compiled from published agricultural research, regional news reporting, and official ASEAN trade standards.";
+  "Compiled from published agricultural research, regional news reporting, official ASEAN trade standards, and interviews with growers in the curator's family.";

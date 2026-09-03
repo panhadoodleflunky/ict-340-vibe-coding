@@ -18,9 +18,11 @@ const fieldNotes = [
     title: "Reading Ripeness",
     khmerName: "",
     body:
-      "A durian doesn't ripen on a calendar; it ripens by advertisement. Growers watch for the spikes to dull from bright green toward yellow-green, listen for hairline cracks opening along the fruit's seams, and check the base of the stem for a slight swelling — a sign the fruit is loosening from the branch. Tap the shell and a ripe one answers with a hollow sound, not a solid thud. Some growers say the surest sign is the smallest one: a trace of sweetness rising from the crack where the stem meets the fruit.",
+      "A durian doesn't ripen on a calendar; it ripens by advertisement. Growers watch the joint where fruit meets branch swell as if about to pop loose, and watch the thorns themselves: the tips shift from bright green to a yellowish-brown, the gaps between them widen slightly, and the seams running down the shell become easier to pick out. The real test is a stick and an ear — tap the husk, and a sharp, solid \"tack-tack\" means it's still green, while a deep, hollow \"thud-thud\" or \"bop-bop\" means the flesh inside has ripened and pulled back just enough from the shell to leave a pocket of air. Not every fruit is left to signal on its own: Monthong bound for market is often cut at around 85 percent maturity, ahead of full ripeness, so it survives the trip and finishes ripening in transit. Locally, the tap itself is ការគោះមើល, the knock test, and a fruit is placed somewhere along ខ្ចី (unripe), ទុំ (ripe), or ទុំជ្រុល (overripe).",
     sources: [
       { text: "ASEAN Standard for Durian (ASEAN Stan 1:2006, Rev.1-2012), Annex 3 — “Methods for testing durian fruit maturity”", url: ASEAN },
+      { text: "Vocabulary confirmed by the curator's family, Kampot durian growers (see Sources)" },
+      { text: "Ripeness signs and the Monthong early-cut practice, from a grower interview with the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: null,
     tags: ["harvest", "ripeness"],
@@ -30,13 +32,19 @@ const fieldNotes = [
     slug: "the-dry-spell",
     figNumber: "02",
     title: "The Dry Spell",
-    khmerName: "",
+    khmerName: "រដូវក្តៅ",
     body:
       "Durian flowering doesn't start with rain — it starts with the absence of it. Trees need two to four consecutive dry weeks to begin flowering; too much rain during this window and they won't bloom. Once flowers open, they do so only at night, closing again by midnight, and pollination is carried out almost entirely by bats and large moths rather than daytime insects. Growers avoid spraying anything near the trees during this window, for the pollinators' sake as much as the fruit's.",
     sources: [
       { text: "Published horticultural research on durian flowering and nocturnal pollination" },
+      { text: "Term confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
-    image: null,
+    image: {
+      src: "/durian-flower.png",
+      alt: "A cluster of pale green-white durian flowers in close-up, their long stamens hanging down",
+      caption:
+        "Durian flowers, open at night for the bats and moths that pollinate them.",
+    },
     tags: ["flowering", "pollination", "season"],
     status: "published",
   },
@@ -68,7 +76,10 @@ const fieldNotes = [
       "Ov Khak is the durian Cambodia claims as its own — grown chiefly around Kampot's Teuk Chhou district and in Kampong Cham, and recognized by name in the ASEAN Standard for Durian, the region's official fruit-trade classification, which sets its fruit at one to four kilograms. In 2025, when China's ambassador to Cambodia visited a Kampot farm, it was Ov Khak he was given to taste, and the variety he singled out as the best durian he'd had. As Cambodia begins exporting fresh durian to China for the first time, Ov Khak is the name most likely to carry that reputation forward.",
     sources: [
       { text: "ASEAN Standard for Durian, Annex 2 — “Ov khak”, 1.0–4.0 kg", url: ASEAN },
-      { text: "Khmer Times / FreshPlaza (May 2025) — the Chinese ambassador's Kampot farm visit" },
+      {
+        text: "FreshPlaza (May 2025) — the Chinese ambassador's Kampot farm visit",
+        url: "https://www.freshplaza.com/asia/article/9731346/china-seeks-more-cambodian-au-khak-durians/",
+      },
       {
         text: "South China Morning Post — Cambodia's first direct durian air shipments to China",
         url: "https://www.scmp.com/economy/china-economy/article/3321602/chinas-durian-diplomacy-expands-cambodias-first-direct-air-shipments-fruit",
@@ -87,15 +98,22 @@ const fieldNotes = [
     slug: "sadong-kit",
     figNumber: "05",
     title: "Sadong Kit: The Undocumented Variety",
-    khmerName: "",
+    khmerName: "សាដង់កិត",
     body:
-      "Sadong Kit appears by name in the same official ASEAN trade standard as Ov Khak, listed as a recognized Cambodian variety with the same fruit-weight range. Beyond that single listing, almost nothing about it has been written in English — no flavor notes, no growing timeline, no clearly documented region beyond an assumed overlap with Ov Khak's territory. It's a variety that officially exists and is functionally undocumented — which may say more about how little of Cambodia's durian knowledge has made it online than about the fruit itself.",
+      "Sadong Kit appears by name in the same official ASEAN trade standard as Ov Khak, listed as a recognized Cambodian variety with the same fruit-weight range. Beyond that single listing, almost nothing about it has been written in English — no flavor notes, no growing timeline, no clearly documented region beyond an assumed overlap with Ov Khak's territory. Even the Khmer name, សាដង់កិត, doesn't appear written down anywhere in the sources this guide could find; it's recorded here because it's still spoken. Why it went undocumented is partly a question of what survives a truck ride. Growers in the curator's family describe it as commercially awkward: a very short harvest window, needing to drop naturally or be cut at exactly the right moment, and flesh that softens so fast once ripe that it can turn to mush in transit — against Monthong, which has a thick husk, can be cut at around 85 percent maturity, and ripens on its own by the time it reaches Phnom Penh. Yield per tree is lower too. When orchards were replanted after the war years, growers needed cash crops, and the market wanted Monthong — and now Musang King, which fetches export prices. Sadong Kit is kept in small numbers, for family, for locals, and for people who drive to the farm to eat it there. It's a variety that officially exists and is functionally undocumented — which may say more about which durians were worth writing down than about the fruit itself.",
     sources: [
       { text: "ASEAN Standard for Durian, Annex 2 — “San dang ket”, 1.0–4.0 kg", url: ASEAN },
+      { text: "Khmer name confirmed by the curator's family, Kampot durian growers (see Sources)" },
+      { text: "Why Sadong Kit is rarely planted — harvest window, transportability, yield, and the post-war shift to cash crops — from a grower interview with the curator's family (see Sources)" },
     ],
-    image: null,
+    image: {
+      src: "/sadong-kit.jpg",
+      alt: "A single Sadong Kit fruit hanging from a branch against a blue sky, another fruit visible behind it",
+      caption:
+        "A Sadong Kit fruit on the tree — the curator's family's own orchard.",
+    },
     tags: ["sadong kit", "native variety", "research gap"],
-    status: "in-progress",
+    status: "published",
   },
   {
     slug: "monthong",
@@ -118,13 +136,14 @@ const fieldNotes = [
     title: "Musang King: The Newcomer",
     khmerName: "",
     body:
-      "Musang King doesn't belong to Kampot's history — it belongs to its export ambitions. The Malaysian variety, officially registered as D197, has become the name Chinese buyers ask for specifically, and Cambodian farmers have begun grafting it into orchards that never grew it before. The trade standard lists D197 at one to three kilograms — a smaller fruit than Monthong, and smaller at the top end than Ov Khak. It's a minority planting in Kampot, and an honest one: not a heritage crop, a market decision.",
+      "Musang King doesn't belong to Kampot's history — it belongs to its export ambitions. The Malaysian variety, officially registered as D197, has become the name Chinese buyers ask for specifically, and Cambodian farmers have begun grafting it into orchards that never grew it before. What growers call ការផ្សាំ — grafting — is done ដើម by ដើម, tree by tree, across the ចម្ការ, the orchard (ដើមទុរេន in full, ដើម for short). The trade standard lists D197 at one to three kilograms — a smaller fruit than Monthong, and smaller at the top end than Ov Khak. It's a minority planting in Kampot, and an honest one: not a heritage crop, a market decision.",
     sources: [
       { text: "ASEAN Standard for Durian, Annex 2 — “D197”, 1.0–3.0 kg", url: ASEAN },
       {
         text: "The Star (Malaysia), 17 June 2025 — Cambodian durian farmers and export ambitions",
         url: "https://www.thestar.com.my/aseanplus/aseanplus-news/2025/06/17/durian-farmers-in-north-eastern-cambodia-win-local-hearts-eye-global-markets",
       },
+      { text: "Vocabulary confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: null,
     tags: ["musang king", "grafting", "export"],
@@ -136,13 +155,18 @@ const fieldNotes = [
     title: "A Name Worth Protecting",
     khmerName: "",
     body:
-      "Durian sells for more under the name “Kampot” than under almost any other label in Cambodia, and the gap is the whole problem. Ouk Kong, president of the Cambodian Durian Association, puts genuine Kampot fruit at around 18,000 riel a kilogram — about $4.50 — against roughly 10,000 riel for imported fruit sold under the same name, which makes the counterfeit the affordable choice. The association has warned that some of that fruit is smuggled across the border and may carry chemical residues, and that the same relabeling reaches Kampong Cham, Battambang, and Tbong Khmum. Kampot has pursued formal Geographical Indication status for its durian, the protection its pepper won in 2016. Until that is secured, telling the real thing from a relabeled import is left largely to the buyer.",
+      "Durian sells for more under the name “Kampot” than under almost any other label in Cambodia, and the gap is the whole problem. Ouk Kong, president of the Cambodian Durian Association, puts genuine Kampot fruit at around 18,000 riel a kilogram — about $4.50 — against roughly 10,000 riel for imported fruit sold under the same name, which makes the counterfeit the affordable choice. The association has warned that some of that fruit is smuggled across the border and may carry chemical residues, and that the same relabeling reaches Kampong Cham, Battambang, and Tbong Khmum. Much of it changes hands through an ឈ្មួញកណ្តាល, a middleman, before it ever reaches a buyer — one more step where a label can quietly change. Kampot has pursued formal Geographical Indication status for its durian, the protection its pepper won from the EU in 2016. Until that is secured, telling the real thing from a relabeled import is left largely to the buyer — and to trusting the អ្នកដាំ, the grower, who sold it.",
     sources: [
       {
         text: "Cambodianess — “Alarm Raised Over Health Risks from Allegedly Imported Durians” (Ouk Kong, Cambodian Durian Association)",
         url: "https://cambodianess.com/article/alarm-raised-over-health-risks-from-allegedly-imported-durians",
       },
       { text: "Khmer Times — earlier reporting on counterfeit “Kampot durian” labeling" },
+      {
+        text: "VOA News, 18 February 2016 — Kampot pepper's EU Geographical Indication status",
+        url: "https://www.voanews.com/a/ap-cambodia-kampot-pepper-wins-coveted-eu-protection/3215893.html",
+      },
+      { text: "Vocabulary confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: null,
     tags: ["kampot", "geographical indication", "market"],
@@ -154,14 +178,21 @@ const fieldNotes = [
     title: "When the Rain Doesn't Come",
     khmerName: "",
     body:
-      "Uon Cheang Meng, president of the Teuk Chhou durian farming community, says prolonged heat and too little rain have left growers unable to irrigate: fruit fails to reach standard size and falls before it ripens, and some trees, in his words, are close to dying. About 30 percent of the district's roughly 100 hectares of durian have been affected. Pov Veasna, who farms around 300 trees there, counts ten to twenty fruit dropping a day, and says the heat ripens what survives too early — smaller, lighter, and thinner in aroma and sweetness, which pulls the price down with it. The orchards sit on slopes and draw on water running off the mountains; the drought has dried those sources, and the community has discussed building real irrigation rather than depending on them. Nothing has been decided. It is a recent thread in Kampot's durian story, not a settled one.",
+      "Uon Cheang Meng, president of the Teuk Chhou durian farming community — a សហគមន៍កសិកម្ម — says prolonged heat and too little rain have left growers unable to irrigate: fruit fails to reach standard size and falls before it ripens, and some trees, in his words, are close to dying. About 30 percent of the district's roughly 100 hectares of durian have been affected. Pov Veasna, who farms around 300 trees there, counts ten to twenty fruit dropping a day — ធុរេនទុំជ្រុះ, fallen fruit, rather than the ធុរេនកាត់ that would normally be cut by hand — and says the heat ripens what survives too early: smaller, lighter, and thinner in aroma and sweetness, which pulls the price down with it. The orchards sit on slopes and draw on water running off the mountains; the drought has dried those sources, and the community has discussed building real irrigation rather than depending on them. Nothing has been decided. Growers in the curator's family describe the same seasons from inside their own orchard. Durian needs a short dry spell to trigger flowering, but the dry seasons have been running long — and in the 2024 El Niño heat, with temperatures near 43°C after months without rain, the trees went into survival mode and aborted their own flowers and young fruit to conserve water. The May rains that normally cool things down and open the harvest stopped arriving predictably. The response has been to stop relying on rain at all: pumps running longer on groundwater, at a cost that eats into the margin; heavier organic mulch banked around the trunks to hold soil moisture; and shade netting over younger Musang King grafts, whose leaves were being scorched outright by afternoon sun. It is a recent thread in Kampot's durian story, not a settled one.",
     sources: [
       {
         text: "Cambodianess — Chhum Chantha, “Kampot Durian Growers Report Declining Yields and Quality as Climate Shifts in Cambodia”, 4 May 2026",
         url: "https://cambodianess.com/article/kampot-durian-growers-report-declining-yields-and-quality-as-climate-shifts-in-cambodia",
       },
+      { text: "Vocabulary confirmed by the curator's family, Kampot durian growers (see Sources)" },
+      { text: "The 2024 heat, flower and fruit abortion, and the irrigation, mulching, and shade-netting response — from a grower interview with the curator's family (see Sources)" },
     ],
-    image: null,
+    image: {
+      src: "/drought-damage-tree.png",
+      alt: "A durian tree with most of its leaves browned and dried, standing among greener trees in an orchard",
+      caption:
+        "A drought-stressed tree in the family's orchard, its leaves browned and dropping.",
+    },
     tags: ["climate", "teuk chhou", "yield"],
     status: "in-progress",
   },
@@ -169,12 +200,13 @@ const fieldNotes = [
     slug: "kampots-season",
     figNumber: "10",
     title: "Kampot's Season",
-    khmerName: "",
+    khmerName: "រដូវប្រមូលផល",
     body:
       "The rhythm starts after Khmer New Year in April, when the rains taper off long enough to trigger flowering. Fruit develops over the following three to five months. Harvest generally runs May through August, sometimes later, shifting slightly earlier or later each year depending on when the dry spell actually arrives.",
     sources: [
       { text: "Published horticultural research on durian flowering and fruit development" },
       { text: "Phnom Penh Post — Cambodian durian farming and industry context" },
+      { text: "Term confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: {
       src: "/harvest-ready-to-sell.jpg",
@@ -183,6 +215,35 @@ const fieldNotes = [
         "A season's harvest laid out on tarpaulins between the trees, stems trimmed, the truck waiting.",
     },
     tags: ["season", "harvest", "kampot"],
+    status: "published",
+  },
+  {
+    slug: "the-china-route",
+    figNumber: "11",
+    title: "The China Route",
+    khmerName: "",
+    body:
+      "Until 17 April 2025, Cambodia had no agreement letting it export fresh durian to China at all. That changed during Xi Jinping's state visit, when the two countries signed a phytosanitary protocol for durian alongside two others, for edible bird's nests and crocodiles. By July, China's customs authority (GACC) had approved 112 orchards and 30 packing facilities as meeting the required agricultural and food-safety standards — the actual list of farms cleared to ship. The area planted nationally has grown alongside that access: from just over 5,000 hectares in 2021 to 16,193 hectares by 2025, producing an estimated 135,546 tonnes. In the first seven months of 2026 alone, Cambodia shipped 5,738 tonnes of fresh durian to China — nearly forty times the volume moved over the same period the year before, according to the agriculture ministry. Most of it now travels overland through Laos, a route the ministry says cuts transit time from 15 to 20 days by sea to around five, so the fruit arrives before it has had the chance to soften.",
+    sources: [
+      {
+        text: "South China Morning Post — Cambodia's first direct durian air shipments to China",
+        url: "https://www.scmp.com/economy/china-economy/article/3321602/chinas-durian-diplomacy-expands-cambodias-first-direct-air-shipments-fruit",
+      },
+      {
+        text: "Cambodianess — “Chinese Authorities Approve Export of Fresh Durian from Cambodia to China” — the 17 April 2025 protocol, GACC's 112 orchards and 30 packing facilities",
+        url: "https://cambodianess.com/article/chinese-authorities-approve-export-of-fresh-durian-from-cambodia-to-china",
+      },
+      {
+        text: "Cambodianess, July 2026 — “Cambodia's Durian Exports to China Surge Nearly 40-Fold as New Rail Corridor Speeds Trade” — national area and production figures, Dept. of Long-Term Crop Development",
+        url: "https://cambodianess.com/article/cambodias-durian-exports-to-china-surge-nearly-40-fold-as-new-rail-corridor-speeds-trade",
+      },
+      {
+        text: "Agence Kampuchea Presse (AKP), 2026 — “Cambodia's Fresh Durian Exports to China Reach 5,738 Tonnes” — Jan–Jul 2026 volume and the Laos transit-time figures",
+        url: "https://www.akp.gov.kh/post/detail/376689",
+      },
+    ],
+    image: null,
+    tags: ["china", "export", "trade"],
     status: "published",
   },
 ];
