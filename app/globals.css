@@ -1078,3 +1078,118 @@ a.section-count:hover { text-decoration: underline; }
 .nf { padding: 150px 30px; }
 .nf .headline-sm { margin-bottom: 22px; }
 .nf .cta-row { margin-top: 34px; }
+
+/* ---------------- search (Field Notes index) ---------------- */
+
+/* Sits above the grid and shares its rule-and-mono vocabulary, so the box
+   reads as part of the catalogue apparatus rather than a bolted-on widget. */
+.search {
+  margin-bottom: 52px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 14px;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 16px 24px;
+  color: var(--cream);
+  /* Khmer is in the stack, so a Khmer query renders in the Khmer face. */
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.search-input::placeholder { color: var(--dim); }
+.search-input:focus {
+  outline: none;
+  border-color: var(--line-2);
+  background: rgba(255, 255, 255, 0.06);
+}
+.search-input:focus-visible { outline: 2px solid var(--flesh); outline-offset: 2px; }
+
+/* The browser's own clear affordance would sit on top of ours. */
+.search-input::-webkit-search-cancel-button { display: none; }
+
+.search-clear {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 12px 20px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.search-clear:hover:not(:disabled) { color: var(--flesh); border-color: var(--line-2); }
+
+/* Held in place, not hidden, so typing the first character does not resize
+   the input under the cursor. */
+.search-clear:disabled { opacity: 0.3; cursor: default; }
+
+.search-count {
+  margin: 16px 0 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* No results is a full statement, not a shrug — it gets a card's worth of
+   room and the same border treatment an entry gets. */
+.search-none {
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 54px 58px;
+  max-width: 62ch;
+}
+
+.search-none-head {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--cream);
+  margin: 0 0 18px;
+  /* A query can be a paste of anything; it must not push the card wider. */
+  overflow-wrap: anywhere;
+}
+
+.search-none-head :lang(km) { font-family: var(--khmer); line-height: 1.9; }
+.search-none .body-copy { margin: 0; }
+.search-none-btn { margin-top: 30px; }
+
+@media (max-width: 734px) {
+  .search { margin-bottom: 34px; }
+  .search-field { flex-wrap: wrap; }
+  .search-input { font-size: 16px; padding: 14px 20px; }
+  .search-none { padding: 36px 28px; border-radius: 20px; }
+  .search-none-head { font-size: 23px; }
+}
