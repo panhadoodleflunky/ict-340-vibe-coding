@@ -28,7 +28,7 @@ const FIGURES = [
     v: "~1,300 ha",
     p: "940 hectares of it harvested, yielding about 12,280 tonnes a year — a 2020 provincial figure, and likely low today.",
   },
-]
+];
 
 export default function Region() {
   return (
@@ -53,6 +53,9 @@ export default function Region() {
           <img
             src="/kampot-durian-monument.jpg"
             alt="The giant durian monument at the roundabout in Kampot, Cambodia"
+            width={1920}
+            height={1440}
+            fetchPriority="high"
           />
           <div className="band-copy">
             <Reveal>
@@ -73,8 +76,12 @@ export default function Region() {
 
         <section className="band">
           <img
-            src="/teuk-chou-scenic.png"
+            src="/teuk-chou-scenic.jpg"
             alt="A wide view of the Teuk Chhou river at dusk, mountains rising behind a treeline on the far bank"
+            width={1946}
+            height={1186}
+            loading="lazy"
+            decoding="async"
           />
           <div className="band-copy">
             <Reveal>

@@ -116,7 +116,7 @@ export const photoCredits = [
     own: true,
   },
   {
-    file: "durian-flower.png",
+    file: "durian-flower.jpg",
     caption: "Durian flowers in close-up, open at night for their pollinators",
     author: collection.curator,
     own: true,
@@ -128,13 +128,13 @@ export const photoCredits = [
     own: true,
   },
   {
-    file: "drought-damage-tree.png",
+    file: "drought-damage-tree.jpg",
     caption: "A drought-stressed durian tree, its leaves browned and dropping",
     author: collection.curator,
     own: true,
   },
   {
-    file: "teuk-chou-scenic.png",
+    file: "teuk-chou-scenic.jpg",
     caption: "The Teuk Chhou river at dusk, with the hills behind it",
     author: collection.curator,
     own: true,

@@ -65,7 +65,7 @@ body::before {
 /* Everything real sits above the two atmosphere layers. */
 .gnav, .hero, main, .foot, .skip { position: relative; z-index: 2; }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 ::selection { background: var(--flesh); color: #16200F; }
 

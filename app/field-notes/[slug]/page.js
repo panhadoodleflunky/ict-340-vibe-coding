@@ -5,9 +5,17 @@ import SiteFooter from "../../../components/SiteFooter.js";
 import Reveal from "../../../components/Reveal.js";
 import fieldNotes, { getNote, getNextNote } from "../../../content/field-notes.js";
 
-/* The ten entries are known at build time, so every entry page is static. */
+/* Every entry is known at build time, so every entry page is static. */
 export function generateStaticParams() {
   return fieldNotes.map((note) => ({ slug: note.slug }));
+}
+
+/* Search engines cut a description near 155 characters; cutting it ourselves
+   on a word boundary keeps a mid-word stub out of the result snippet. */
+function summarise(body, limit = 155) {
+  if (body.length <= limit) return body;
+  const cut = body.slice(0, limit);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
 
 export async function generateMetadata({ params }) {
@@ -16,7 +24,7 @@ export async function generateMetadata({ params }) {
   if (!note) return { title: "Entry not found — Kampot Durian" };
   return {
     title: `Fig. ${note.figNumber} — ${note.title}`,
-    description: note.body.slice(0, 155),
+    description: summarise(note.body),
   };
 }
 
@@ -53,7 +61,14 @@ export default async function FieldNote({ params }) {
 
             {note.image ? (
               <Reveal as="figure" className="entry-figure">
-                <img src={note.image.src} alt={note.image.alt} />
+                <img
+                  src={note.image.src}
+                  alt={note.image.alt}
+                  width={note.image.width}
+                  height={note.image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <figcaption>{note.image.caption}</figcaption>
               </Reveal>
             ) : null}
@@ -82,7 +97,7 @@ export default async function FieldNote({ params }) {
               </p>
             </Reveal>
 
-            {note.tags.length > 0 ? (
+            {(note.tags || []).length > 0 ? (
               <ul className="entry-tags">
                 {note.tags.map((tag) => (
                   <li key={tag} className="entry-tag">{tag}</li>

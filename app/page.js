@@ -61,6 +61,9 @@ export default function Home() {
             <img
               src="/tree-in-fruit.jpg"
               alt="Durian fruit hanging on the tree, Kampot"
+              width={1536}
+              height={2048}
+              fetchPriority="high"
             />
             <figcaption>
               <span className="hero-cap-no">Kampot</span>
@@ -89,7 +92,7 @@ export default function Home() {
             </Reveal>
             <div className="bento">
               <Reveal as="article" className="tile">
-                <p className="tile-label">Entries published</p>
+                <p className="tile-label">Entries compiled</p>
                 <p className="stat-num">{fieldNotes.length}</p>
                 <p className="body-copy">
                   {open} of them marked in progress, because the published
@@ -144,6 +147,10 @@ export default function Home() {
           <img
             src="/kampot-durian-monument.jpg"
             alt="The giant durian monument at the roundabout in Kampot, Cambodia"
+            width={1920}
+            height={1440}
+            loading="lazy"
+            decoding="async"
           />
           <div className="band-copy">
             <Reveal>
@@ -154,9 +161,10 @@ export default function Home() {
                 Mostly in one district.
               </h2>
               <p className="sub">
-                Kampot put a durian at the centre of its roundabout. The fruit
-                behind it comes largely from Teuk Chhou — river-laid soil,
-                roughly 1,300 hectares, and a season now shifting with the rain.
+                Kampot grows something like 1,300 hectares of durian, and most
+                of what carries the province's name comes from one district
+                west of the town — where the soil is river-laid, the water is
+                close, and the season is shifting with the rain.
               </p>
               <p className="cta-row">
                 <Link className="link" href="/region">Read the region</Link>

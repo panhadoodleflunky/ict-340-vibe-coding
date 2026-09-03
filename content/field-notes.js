@@ -1,4 +1,4 @@
-/* The ten Field Notes, in catalogue order.
+/* The Field Notes, in catalogue order.
    Shape is defined in entry-sketch.md. Every entry's claims trace to the
    sources listed on it; the matching bibliography lives in content/sources.js.
 
@@ -40,7 +40,9 @@ const fieldNotes = [
       { text: "Term confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: {
-      src: "/durian-flower.png",
+      src: "/durian-flower.jpg",
+      width: 728,
+      height: 724,
       alt: "A cluster of pale green-white durian flowers in close-up, their long stamens hanging down",
       caption:
         "Durian flowers, open at night for the bats and moths that pollinate them.",
@@ -60,6 +62,8 @@ const fieldNotes = [
     ],
     image: {
       src: "/tree-in-fruit.jpg",
+      width: 1536,
+      height: 2048,
       alt: "A durian tree hung with dozens of mature spiked fruit, its branches braced with support lines",
       caption:
         "Fruit carried on the branch, the limbs braced with lines against the weight.",
@@ -87,6 +91,8 @@ const fieldNotes = [
     ],
     image: {
       src: "/ov-khak-opened.jpg",
+      width: 960,
+      height: 1280,
       alt: "A hand holding an opened durian half, thick pale-yellow flesh in the shell, a whole fruit hanging on the tree behind",
       caption:
         "An opened fruit, held under a tree still carrying its own — the flesh thick and pale gold in the locule.",
@@ -108,6 +114,8 @@ const fieldNotes = [
     ],
     image: {
       src: "/sadong-kit.jpg",
+      width: 1280,
+      height: 960,
       alt: "A single Sadong Kit fruit hanging from a branch against a blue sky, another fruit visible behind it",
       caption:
         "A Sadong Kit fruit on the tree — the curator's family's own orchard.",
@@ -188,7 +196,9 @@ const fieldNotes = [
       { text: "The 2024 heat, flower and fruit abortion, and the irrigation, mulching, and shade-netting response — from a grower interview with the curator's family (see Sources)" },
     ],
     image: {
-      src: "/drought-damage-tree.png",
+      src: "/drought-damage-tree.jpg",
+      width: 734,
+      height: 884,
       alt: "A durian tree with most of its leaves browned and dried, standing among greener trees in an orchard",
       caption:
         "A drought-stressed tree in the family's orchard, its leaves browned and dropping.",
@@ -210,6 +220,8 @@ const fieldNotes = [
     ],
     image: {
       src: "/harvest-ready-to-sell.jpg",
+      width: 2048,
+      height: 1536,
       alt: "Several hundred harvested durians laid out on tarpaulins between the trees, a pickup truck waiting behind them",
       caption:
         "A season's harvest laid out on tarpaulins between the trees, stems trimmed, the truck waiting.",

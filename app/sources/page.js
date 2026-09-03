@@ -56,7 +56,11 @@ export default function Sources() {
         <section className="section">
           <div className="inner reading">
             <Reveal>
-              <SectionLabel no="04">Photography</SectionLabel>
+              <SectionLabel
+                no={String(sourceGroups.length + 2).padStart(2, "0")}
+              >
+                Photography
+              </SectionLabel>
             </Reveal>
             <Reveal as="ul" className="biblio">
               {photoCredits.map((credit) => (

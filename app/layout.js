@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import collection from "../collection.config.js";
+import { siteUrl } from "../content/site.js";
 
 /* Display face: one weight only (400), meant for large sizes. */
 const display = Instrument_Serif({
@@ -39,12 +40,7 @@ const khmer = Noto_Sans_Khmer({
 });
 
 export const metadata = {
-  /* Vercel supplies the deploy URL; falls back to local during dev. */
-  metadataBase: new URL(
-    process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000",
-  ),
+  metadataBase: new URL(siteUrl()),
   title: `${collection.name} — Khmer Living Archive`,
   description: collection.description,
   openGraph: {
