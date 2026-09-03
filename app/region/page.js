@@ -71,10 +71,32 @@ export default function Region() {
           </div>
         </section>
 
+        <section className="band">
+          <img
+            src="/teuk-chou-scenic.png"
+            alt="A wide view of the Teuk Chhou river at dusk, mountains rising behind a treeline on the far bank"
+          />
+          <div className="band-copy">
+            <Reveal>
+              <SectionLabel no="03">The setting</SectionLabel>
+              <h2 className="headline-sm">
+                Rivers,
+                <br />
+                and mountains behind them.
+              </h2>
+              <p className="sub">
+                Teuk Chhou's orchards sit on this river's alluvial soil, water
+                close and hills rising just behind — the geography this belt
+                depends on.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
         <section className="section">
           <div className="inner">
             <Reveal>
-              <SectionLabel no="03">The scale</SectionLabel>
+              <SectionLabel no="04">The scale</SectionLabel>
               <h2 className="headline-sm">How much fruit this is.</h2>
             </Reveal>
             <Reveal className="specs">
@@ -117,7 +139,7 @@ export default function Region() {
         <section className="section">
           <div className="inner reading">
             <Reveal>
-              <SectionLabel no="04">The pressure</SectionLabel>
+              <SectionLabel no="05">The pressure</SectionLabel>
               <h2 className="headline-sm">What is changing now.</h2>
               <p className="reading-body">
                 Roughly 30 percent of Teuk Chhou district's 100 hectares of
