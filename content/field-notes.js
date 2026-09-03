@@ -11,6 +11,28 @@
 const ASEAN =
   "https://asean.org/wp-content/uploads/2012/05/1-ASEAN-STANDARD-FOR-DURIAN-REV-2012.pdf";
 
+/* Horticultural sources, read directly. Cited in more than one entry, so they
+   are named once here rather than retyped. */
+const CTAHR = {
+  text: "Robert E. Paull et al., “Durian: Postharvest Quality-Maintenance Guidelines”, F_N-27, College of Tropical Agriculture and Human Resources, University of Hawai\u2018i at M\u0101noa, June 2014",
+  url: "https://www.ctahr.hawaii.edu/oc/freepubs/pdf/F_N-27.pdf",
+};
+
+const DRY_SPELLS = {
+  text: "Eguchi, Hassan & Numata (2024), “Dry spells trigger durian flowering in aseasonal tropics”, International Journal of Biometeorology 69(2), 403\u2013409",
+  url: "https://doi.org/10.1007/s00484-024-02819-x",
+};
+
+const FLYING_FOX = {
+  text: "Aziz et al. (2017), “Pollination by the locally endangered island flying fox (Pteropus hypomelanus) enhances fruit production of the economically important durian (Durio zibethinus)”, Ecology and Evolution 7(21), 8670\u20138684",
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677486/",
+};
+
+const MATURITY_STAGES = {
+  text: "Youryon & Supapvanich (2022), “Quality Comparison of Naturally and Artificially Ripened \u2018Monthong\u2019 Durian Fruits Harvested at Various Maturity Stages”, Current Applied Science and Technology 22(6)",
+  url: "https://doi.org/10.55003/cast.2022.06.22.002",
+};
+
 const fieldNotes = [
   {
     slug: "reading-ripeness",
@@ -18,11 +40,13 @@ const fieldNotes = [
     title: "Reading Ripeness",
     khmerName: "",
     body:
-      "A durian doesn't ripen on a calendar; it ripens by advertisement. Growers watch the joint where fruit meets branch swell as if about to pop loose, and watch the thorns themselves: the tips shift from bright green to a yellowish-brown, the gaps between them widen slightly, and the seams running down the shell become easier to pick out. The real test is a stick and an ear — tap the husk, and a sharp, solid \"tack-tack\" means it's still green, while a deep, hollow \"thud-thud\" or \"bop-bop\" means the flesh inside has ripened and pulled back just enough from the shell to leave a pocket of air. Not every fruit is left to signal on its own: Monthong bound for market is often cut at around 85 percent maturity, ahead of full ripeness, so it survives the trip and finishes ripening in transit. Locally, the tap itself is ការគោះមើល, the knock test, and a fruit is placed somewhere along ខ្ចី (unripe), ទុំ (ripe), or ទុំជ្រុល (overripe).",
+      "A durian doesn't ripen on a calendar; it ripens by advertisement. Growers watch the joint where fruit meets branch swell as if about to pop loose, and watch the thorns themselves: the tips shift from bright green to a yellowish-brown, the gaps between them widen slightly, and the seams running down the shell become easier to pick out. The real test is a stick and an ear — tap the husk, and a sharp, solid \"tack-tack\" means it's still green, while a deep, hollow \"thud-thud\" or \"bop-bop\" means the flesh inside has ripened and pulled back just enough from the shell to leave a pocket of air. Not every fruit is left to signal on its own: Monthong bound for market is often cut at around 85 percent maturity, ahead of full ripeness, so it survives the trip and finishes ripening in transit. Locally, the tap itself is ការគោះមើល, the knock test, and a fruit is placed somewhere along ខ្ចី (unripe), ទុំ (ripe), or ទុំជ្រុល (overripe). The published postharvest literature reaches the same place by a different road: the abscission zone, the carpel sutures, and tapping are named there as the most reliable maturity criteria, and the early cut has a number on it — around 115 days after flowering is roughly 85 percent maturity. There is a cost to waiting, too. A fruit that drops and is picked up off the ground keeps two to three days; the same fruit cut from the branch keeps seven to eight.",
     sources: [
       { text: "ASEAN Standard for Durian (ASEAN Stan 1:2006, Rev.1-2012), Annex 3 — “Methods for testing durian fruit maturity”", url: ASEAN },
       { text: "Vocabulary confirmed by the curator's family, Kampot durian growers (see Sources)" },
       { text: "Ripeness signs and the Monthong early-cut practice, from a grower interview with the curator's family, Kampot durian growers (see Sources)" },
+      CTAHR,
+      MATURITY_STAGES,
     ],
     image: null,
     tags: ["harvest", "ripeness"],
@@ -34,9 +58,10 @@ const fieldNotes = [
     title: "The Dry Spell",
     khmerName: "រដូវក្តៅ",
     body:
-      "Durian flowering doesn't start with rain — it starts with the absence of it. Trees need two to four consecutive dry weeks to begin flowering; too much rain during this window and they won't bloom. Once flowers open, they do so only at night, closing again by midnight, and pollination is carried out almost entirely by bats and large moths rather than daytime insects. Growers avoid spraying anything near the trees during this window, for the pollinators' sake as much as the fruit's.",
+      "Durian flowering doesn't start with rain — it starts with the absence of it. Tracking five flowering events, Eguchi, Hassan and Numata found a drought of roughly fifteen days before every one, with peak flowering about fifty days after the fifteen-day rainfall average dropped below a millimetre a day. The dry spell does not have to be unbroken, which is the part orchard lore usually gets wrong: buds were induced through occasional rain, so long as that running average stayed low. The flowers themselves keep a schedule of about nine hours. They open in the late afternoon, near a quarter past four, and the whole corolla drops away between one and two in the morning — one night, and no more. Of everything that visits in that window, only bats were found to be in a mutualistic relationship with the flower; honeybees and stingless bees came in numbers but behaved largely as pollen robbers, and moths were barely recorded at all.",
     sources: [
-      { text: "Published horticultural research on durian flowering and nocturnal pollination" },
+      DRY_SPELLS,
+      FLYING_FOX,
       { text: "Term confirmed by the curator's family, Kampot durian growers (see Sources)" },
     ],
     image: {
@@ -45,7 +70,7 @@ const fieldNotes = [
       height: 724,
       alt: "A cluster of pale green-white durian flowers in close-up, their long stamens hanging down",
       caption:
-        "Durian flowers, open at night for the bats and moths that pollinate them.",
+        "Durian flowers. They open in the late afternoon and are gone by two in the morning; bats do the pollinating.",
     },
     tags: ["flowering", "pollination", "season"],
     status: "published",
@@ -56,9 +81,10 @@ const fieldNotes = [
     title: "From Flower to Fruit",
     khmerName: "",
     body:
-      "Between pollination and a ripe fruit lies roughly three to five months, though the exact count depends on the variety. Researchers measure it in “days after anthesis”: Thailand's Monthong reaches full maturity around 120 to 135 days after bloom, while faster varieties can be ready closer to 100 days. Cambodia's own varieties haven't been studied with the same precision — their timing is known to growers by observation, not by published data.",
+      "Between pollination and a ripe fruit lies roughly three to five months, though the exact count depends on the variety. Researchers measure it in “days after anthesis” — days since the flower opened. For Thailand's Monthong the scale is well mapped: 110 days is about 80 percent maturity, 115 about 85, 120 about 90, and fruit left on the tree to ripen there is taken at around 130. Cambodia's own varieties have not been studied with anything like that precision. Their timing is known to growers by observation, and has never been written down as a number.",
     sources: [
-      { text: "Published horticultural research on Montong fruit maturity and durian development stages" },
+      MATURITY_STAGES,
+      CTAHR,
     ],
     image: {
       src: "/tree-in-fruit.jpg",
@@ -129,10 +155,10 @@ const fieldNotes = [
     title: "Monthong: The Golden Pillow",
     khmerName: "",
     body:
-      "Monthong is Thailand's durian, and the closest thing the region has to a default. Its flesh is thick, pale yellow, and comparatively mild-smelling, which has made it the most widely traded durian cultivar in Southeast Asia — including in Kampot, where it's grown alongside Cambodia's own varieties. It's also a slow fruit: once picked, it takes about five days to fully ripen, longer than most. The ASEAN trade standard lists it — spelled “Montong” there — at 1.5 to 6.0 kilograms, half again the top weight allowed for Cambodia's own varieties.",
+      "Monthong is Thailand's durian, and the closest thing the region has to a default. Its flesh is thick, pale yellow, and comparatively mild-smelling, which has made it the most widely traded durian cultivar in Southeast Asia — including in Kampot, where it's grown alongside Cambodia's own varieties. It's also a slow fruit: once picked it takes four to six days to ripen, where Chanee takes two to four. The ASEAN trade standard lists it — spelled “Montong” there — at 1.5 to 6.0 kilograms, half again the top weight allowed for Cambodia's own varieties.",
     sources: [
       { text: "ASEAN Standard for Durian, Annex 2 — “Montong”, 1.5–6.0 kg", url: ASEAN },
-      { text: "Published horticultural research on Montong fruit maturity" },
+      CTAHR,
     ],
     image: null,
     tags: ["monthong", "variety", "trade"],

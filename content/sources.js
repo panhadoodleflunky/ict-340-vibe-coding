@@ -59,8 +59,13 @@ export const sourceGroups = [
         url: "https://www.voanews.com/a/ap-cambodia-kampot-pepper-wins-coveted-eu-protection/3215893.html",
       },
       {
+        name: "Khmer Times \u2014 \u201cKampot durian fakes raise a stink\u201d",
+        note: "Reporting on cheap imports from Thailand and Vietnam relabelled and sold as Kampot fruit. Background for Fig. 08. Located by search; the publisher blocks automated retrieval, so the article itself has not been read for this guide \u2014 the link is here so a reader can check it directly.",
+        url: "https://www.khmertimeskh.com/13670/kampot-durian-fakes-raise-a-stink/",
+      },
+      {
         name: "Phnom Penh Post",
-        note: "Profile of a Cambodian durian farmer, and wider industry context.",
+        note: "Profile of a Cambodian durian farmer, and wider industry context. Deliberately unlinked: the paper has published more than one article of this description and the site blocks automated retrieval, so naming a single URL would be a guess.",
       },
     ],
   },
@@ -86,8 +91,24 @@ export const sourceGroups = [
         url: "https://asean.org/wp-content/uploads/2012/05/1-ASEAN-STANDARD-FOR-DURIAN-REV-2012.pdf",
       },
       {
-        name: "Published horticultural research",
-        note: "Academic work on durian flowering, nocturnal pollination, days-after-anthesis maturity, and Montong fruit development. Cited from research notes; individual papers are not yet linked.",
+        name: "Eguchi, Hassan & Numata (2024) — International Journal of Biometeorology 69(2), 403\u2013409",
+        note: "\u201cDry spells trigger durian flowering in aseasonal tropics.\u201d Source for Fig. 02: a drought of roughly fifteen days preceded each of five flowering events, with peak flowering about fifty days after the fifteen-day rainfall moving average fell below 1 mm \u2014 and the dry period need not be unbroken.",
+        url: "https://doi.org/10.1007/s00484-024-02819-x",
+      },
+      {
+        name: "Aziz et al. (2017) — Ecology and Evolution 7(21), 8670\u20138684",
+        note: "\u201cPollination by the locally endangered island flying fox (Pteropus hypomelanus) enhances fruit production of the economically important durian.\u201d Source for Fig. 02: flowers open around 16:15 and the corolla drops between 01:00 and 02:00; only bats were found to be mutualists, while bees acted largely as pollen robbers and moths were barely recorded.",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677486/",
+      },
+      {
+        name: "Youryon & Supapvanich (2022) — Current Applied Science and Technology 22(6)",
+        note: "\u201cQuality Comparison of Naturally and Artificially Ripened \u2018Monthong\u2019 Durian Fruits Harvested at Various Maturity Stages.\u201d Source for Fig. 03 and the early-cut figure in Fig. 01: 110 days after anthesis is about 80 percent maturity, 115 about 85, 120 about 90, with tree-ripened fruit taken around 130.",
+        url: "https://doi.org/10.55003/cast.2022.06.22.002",
+      },
+      {
+        name: "Paull et al., CTAHR F_N-27, June 2014",
+        note: "\u201cDurian: Postharvest Quality-Maintenance Guidelines\u201d, University of Hawai\u2018i at M\u0101noa. Read directly. Source for Fig. 01 and Fig. 06: the abscission zone, carpel sutures, and tapping are named as the most reliable maturity criteria; a fruit picked up off the ground keeps two to three days against seven to eight for one cut from the tree; Monthong ripens in four to six days after harvest, Chanee in two to four.",
+        url: "https://www.ctahr.hawaii.edu/oc/freepubs/pdf/F_N-27.pdf",
       },
     ],
   },
