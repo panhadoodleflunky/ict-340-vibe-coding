@@ -59,13 +59,17 @@ export default function About() {
                 {method} Most of it is secondary research: where a published
                 source quotes a grower, this guide paraphrases and credits the
                 source rather than reproducing the quote or putting words in
-                anyone's mouth. The exception is the curator's own family, who
-                grow durian in Kampot and answered questions directly for this
-                project — on reading ripeness, on why Sadong Kit is rarely
-                planted, and on what the last few seasons of heat have done to
-                their trees. That material is marked as family knowledge on the
-                entries that use it, and kept separate from the published
-                citations rather than dressed up as one. Every entry lists what
+                anyone's mouth. The exception is the curator's own parents, who
+                own and work a durian orchard at Teuk Chhou and answered
+                questions directly for this project on 1 September 2026 — on
+                reading ripeness, on the rule against spraying while the trees
+                are in flower, on why Sadong Kit is rarely planted and what it
+                tastes like, on their own orchard's size and variety split, and
+                on what the last few seasons of heat have done to their trees.
+                They asked not to be named, so the interview is dated and
+                credited by relationship instead. That material is marked as
+                family knowledge on the entries that use it, and kept separate
+                from the published citations rather than dressed up as one. Every entry lists what
                 it rests on, and the full bibliography is on{" "}
                 <Link href="/sources">Sources &amp; Credits</Link>.
               </p>
