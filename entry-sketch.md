@@ -14,7 +14,7 @@ traces to a published source, so `sources` is required and there is no
 | khmerName | optional | the Khmer term, where a real one is documented — never invented |
 | body | required | the entry itself, written in the guide's own voice |
 | sources | required | one or more published sources the claims trace to |
-| image | optional | supporting photo, with its credit preserved |
+| image | optional | supporting photo: `src`, `width`, `height`, `alt`, `caption` — the pixel size is real, measured from the file, so the browser can reserve the space |
 | tags | optional | e.g. "harvest", "variety", "export", "climate" |
 | status | optional | `published` or `in-progress` — some entries are honestly unfinished |
 

@@ -1,26 +1,66 @@
 [
   {
     "file": "ov-khak-opened.jpg",
+    "caption": "An opened durian held beneath a fruiting tree",
     "author": "Sovanpanha Nonn",
     "license": "Own work, all rights reserved",
+    "licenseUrl": null,
     "page": null
   },
   {
     "file": "tree-in-fruit.jpg",
+    "caption": "A durian tree carrying mature fruit, branches braced",
     "author": "Sovanpanha Nonn",
     "license": "Own work, all rights reserved",
+    "licenseUrl": null,
     "page": null
   },
   {
     "file": "harvest-ready-to-sell.jpg",
+    "caption": "Harvest laid out on tarpaulins, ready for the buyer",
     "author": "Sovanpanha Nonn",
     "license": "Own work, all rights reserved",
+    "licenseUrl": null,
+    "page": null
+  },
+  {
+    "file": "durian-flower.jpg",
+    "caption": "Durian flowers in close-up, open at night for their pollinators",
+    "author": "Sovanpanha Nonn",
+    "license": "Own work, all rights reserved",
+    "licenseUrl": null,
+    "page": null
+  },
+  {
+    "file": "sadong-kit.jpg",
+    "caption": "A Sadong Kit fruit on the tree, in the family's own orchard",
+    "author": "Sovanpanha Nonn",
+    "license": "Own work, all rights reserved",
+    "licenseUrl": null,
+    "page": null
+  },
+  {
+    "file": "drought-damage-tree.jpg",
+    "caption": "A drought-stressed durian tree, its leaves browned and dropping",
+    "author": "Sovanpanha Nonn",
+    "license": "Own work, all rights reserved",
+    "licenseUrl": null,
+    "page": null
+  },
+  {
+    "file": "teuk-chou-scenic.jpg",
+    "caption": "The Teuk Chhou river at dusk, with the hills behind it",
+    "author": "Sovanpanha Nonn",
+    "license": "Own work, all rights reserved",
+    "licenseUrl": null,
     "page": null
   },
   {
     "file": "kampot-durian-monument.jpg",
+    "caption": "The durian monument at the Kampot roundabout",
     "author": "Myrmux",
     "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "page": "https://commons.wikimedia.org/wiki/File:Durian_Skulptur_in_Kampot,_Kambodscha.jpg"
   }
 ]
