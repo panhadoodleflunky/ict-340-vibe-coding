@@ -33,7 +33,7 @@ export default function About() {
           <h1 className="headline-sm">A compiled record, not a memoir.</h1>
           <p className="sub">
             This site exists because most of what's true about Kampot durian
-            hasn't been written down anywhere in English. Where it has, we
+            hasn't been written down anywhere in English. Where it has, I
             checked it.
           </p>
         </div>
@@ -79,10 +79,9 @@ export default function About() {
                 documented in English — Sadong Kit appears in the official ASEAN
                 trade standard and almost nowhere else, and what this guide can
                 say beyond that comes from growers rather than from a paper. The
-                climate reporting is recent enough that it has not settled. The
-                horticultural research behind the flowering and fruit-development
-                figures is cited generically, without specific papers. Those gaps
-                are left visible on purpose.
+                climate reporting is recent enough that it has not settled. Two
+                bibliography entries still resolve to no single article, and say
+                so where they appear. Those gaps are left visible on purpose.
               </p>
             </Reveal>
 
