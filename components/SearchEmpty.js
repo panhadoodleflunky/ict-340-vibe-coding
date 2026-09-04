@@ -1,4 +1,4 @@
-/* The no-results state. Its own file because AGENTS.md rule 5 caps a
+/* The no-results state. Its own file because this project caps a
    component at roughly 80 lines and EntrySearch was over with this inline.
 
    The copy is the point: an empty result in a research archive is a fact

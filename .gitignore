@@ -5,8 +5,8 @@ out
 .DS_Store
 .vercel
 
-# Working material — interview answers, build log, notes. Local only.
-# INTERVIEW-ANSWERS.md carries the farm's location and the growers' income
-# figures; /about publicly promises the water source is not published, so this
-# must never reach a public repo.
+# Working material and private notes. Local only, never committed.
 workspace/
+
+# Agent rules. Lives at the repo root so tools auto-load it, but is not pushed.
+/AGENTS.md

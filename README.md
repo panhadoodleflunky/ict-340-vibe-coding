@@ -24,9 +24,10 @@ sources. The rule that replaced it governs everything here:
 
 That is why entries carry a `status` of `published` or `in-progress`, why
 `/about` has a section called "What is missing", and why a Khmer name appears
-on an entry only where a real one is documented. The full reasoning lives in
-[`AGENTS.md`](AGENTS.md); the running log of what was checked, and what turned
-out to be wrong when checked, is in [`PROGRESS.md`](PROGRESS.md).
+on an entry only where a real one is documented. Where a claim comes from the
+curator's family rather than from the literature, the entry says so and dates
+it; where the two disagree, both are printed rather than one being quietly
+dropped.
 
 ## Running it
 
@@ -36,7 +37,7 @@ npm run dev      # http://localhost:3000
 ```
 
 ```bash
-npm run build    # 19 static pages
+npm run build    # 22 static pages
 ```
 
 Requires Node 18.18 or newer. No environment variables, no database, no API
@@ -54,7 +55,7 @@ total**, all of them the framework itself:
 | Content | plain JS modules; no CMS, no MDX, no database |
 | Search | a pure function over an array; no search library |
 
-That is a deliberate constraint, not an omission. See `AGENTS.md` rule 1.
+That is a deliberate constraint, not an omission.
 
 ## How it is laid out
 
@@ -62,19 +63,22 @@ That is a deliberate constraint, not an omission. See `AGENTS.md` rule 1.
 app/
   page.js                  home — hero, three featured entries, method note
   region/page.js           the belt, the setting, the scale, the pressure
-  field-notes/page.js      browse + search over every entry
+  field-notes/page.js      browse + search over every entry, six to a page
   field-notes/[slug]/      one entry per page, statically generated
   about/page.js            what this is, method, what is missing, why
   sources/page.js          full bibliography and photograph credits
   globals.css              the whole stylesheet
 components/
-  EntrySearch.js           client component: owns the search query
+  EntrySearch.js           client component: owns the search query and the page
+  SearchBox.js             the search field itself, presentational
+  Pagination.js            the page controls, presentational
   SearchEmpty.js           the no-results state
   EntryCard.js             one entry, in three width variants
   SiteNav / SiteFooter / SectionLabel / DurianGlyph / Reveal
 content/
   field-notes.js           the entries — the data behind every page
   search-index.js          which fields are searchable, and the matcher
+  card-variants.js         the grid cycle and the paging maths, as pure functions
   sources.js               bibliography, photo credits, shared method string
 collection.config.js       archive identity: name, description, curator, source
 ```
@@ -100,6 +104,11 @@ titles** — in a guide whose whole claim is traceability, "which entries rest o
 the ASEAN standard" is a real question a reader might have. URLs are excluded.
 Every word of the query must appear somewhere in the entry, so `kampot drought`
 finds the entry about both rather than everything about either.
+
+**Browsing is paged; searching is not.** Six entries to a page when you are
+browsing, and no pager at all once you type — a query is already the reader
+narrowing the list, and paging their matches would hide results behind a
+control they did not ask for.
 
 Two things it handles that a naive `includes()` would not:
 
