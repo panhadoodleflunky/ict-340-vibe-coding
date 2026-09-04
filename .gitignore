@@ -4,3 +4,9 @@ out
 .env*
 .DS_Store
 .vercel
+
+# Working material — interview answers, build log, notes. Local only.
+# INTERVIEW-ANSWERS.md carries the farm's location and the growers' income
+# figures; /about publicly promises the water source is not published, so this
+# must never reach a public repo.
+workspace/
