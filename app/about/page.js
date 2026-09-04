@@ -61,15 +61,25 @@ export default function About() {
                 source rather than reproducing the quote or putting words in
                 anyone's mouth. The exception is the curator's own parents, who
                 own and work a durian orchard at Teuk Chhou and answered
-                questions directly for this project on 1 September 2026 — on
-                reading ripeness, on the rule against spraying while the trees
-                are in flower, on why Sadong Kit is rarely planted and what it
-                tastes like, on their own orchard's size and variety split, and
-                on what the last few seasons of heat have done to their trees.
-                They asked not to be named, so the interview is dated and
-                credited by relationship instead. That material is marked as
-                family knowledge on the entries that use it, and kept separate
-                from the published citations rather than dressed up as one. Every entry lists what
+                questions directly for this project, first on 1 September 2026
+                and then at length on 4 September, across 220 questions covering
+                every entry in the guide. That second sitting is where most of
+                the first-hand material here comes from — including the number
+                of days from petal drop to harvest for each of their four
+                varieties, which this project could not find written down
+                anywhere else. They asked not to be named, so the interviews are
+                dated and credited by relationship instead, and they asked that
+                the location of their water source not be published, so it is
+                not. That material is marked as family knowledge on the entries
+                that use it, and kept separate from the published citations
+                rather than dressed up as one. Two cautions travel with it:
+                prices are peak-season farm-gate figures and can fall by about
+                half in a tight market, and tree counts are estimates, because
+                the growers keep no exact tally. Where their observation
+                contradicts a published study — as it does over whether moths
+                pollinate durian — both are printed, and the disagreement is
+                left standing rather than resolved in favour of whichever is
+                easier to cite. Every entry lists what
                 it rests on, and the full bibliography is on{" "}
                 <Link href="/sources">Sources &amp; Credits</Link>.
               </p>
