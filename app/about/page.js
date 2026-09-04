@@ -14,7 +14,7 @@ export const metadata = {
 
 const SPECS = [
   { h: "Province", p: `${collection.province}, Cambodia` },
-  { h: "Season", p: "Harvest runs May through August." },
+  { h: "Season", p: "Harvest opens mid-May, peaks mid-June, ends late July — though the start has moved between 28 April and 12 June." },
   { h: "Method", p: method },
   { h: "Status", p: "In progress. Entries added as research continues." },
 ];
@@ -72,16 +72,18 @@ export default function About() {
                 the location of their water source not be published, so it is
                 not. That material is marked as family knowledge on the entries
                 that use it, and kept separate from the published citations
-                rather than dressed up as one. Two cautions travel with it:
-                prices are peak-season farm-gate figures and can fall by about
-                half in a tight market, and tree counts are estimates, because
-                the growers keep no exact tally. Where their observation
-                contradicts a published study — as it does over whether moths
-                pollinate durian — both are printed, and the disagreement is
-                left standing rather than resolved in favour of whichever is
-                easier to cite. Every entry lists what
-                it rests on, and the full bibliography is on{" "}
-                <Link href="/sources">Sources &amp; Credits</Link>.
+                rather than dressed up as one.
+              </p>
+              <p className="reading-body">
+                Two cautions travel with that material: prices are peak-season
+                farm-gate figures and can fall by about half in a tight market,
+                and tree counts are the growers' own estimates, because they
+                keep no exact tally. And where their observation contradicts a
+                published study — as it does over whether moths pollinate
+                durian — both are printed, and the disagreement is left standing
+                rather than resolved in favour of whichever is easier to cite.
+                Every entry lists what it rests on, and the full bibliography is
+                on <Link href="/sources">Sources &amp; Credits</Link>.
               </p>
             </Reveal>
 
@@ -119,10 +121,15 @@ export default function About() {
                 been.
               </p>
               <p className="reading-body">
-                Worth saying plainly: most of this is compiled from published
-                sources, not from my family. Where it does come from them, the
-                entry says so — and it is credited as family knowledge, not as
-                a citation it isn't.
+                Worth saying plainly, and the balance has changed: this began as
+                mostly published sources with a little family knowledge in it.
+                After two long interviews it is closer to even, and several
+                entries now rest more on my parents than on any paper. That is
+                the part of this guide nobody else could have written, and it is
+                also the part a reader has no way of checking. So every claim
+                that comes from them is marked as theirs, dated, and kept
+                separate from the citations — credited as family knowledge, not
+                as a citation it isn't.
               </p>
             </Reveal>
           </div>

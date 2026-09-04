@@ -70,8 +70,8 @@ export default function Sources() {
                     {credit.own ? (
                       <>
                         Photograph by {credit.author} — the curator's own work,
-                        taken in Kampot. The only primary material on this
-                        site.
+                        taken in Kampot. Primary material, like the grower
+                        interviews above.
                       </>
                     ) : (
                       <>

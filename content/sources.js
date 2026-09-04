@@ -25,7 +25,7 @@ export const sourceGroups = [
       },
       {
         name: "Khmer Times, 9 May 2020",
-        note: "“Durian lovers to feast on Kampot durians.” Source for Kampot's provincial area and yield.",
+        note: "“Durian lovers to feast on Kampot durians.” The only figure this guide could find for Kampot province's own durian area and yield — about 1,300 hectares, 940 of them harvested. It is listed here but no longer published on the site: it dates from 2020, rests on this single report, and has not been restated since, which is too thin to state as current fact. The Region says so in place of the number.",
         url: "https://www.khmertimeskh.com/50721478/durian-lovers-to-feast-on-kampot-durians/",
       },
       {
@@ -77,8 +77,12 @@ export const sourceGroups = [
         note: "Khmer vocabulary used in the field — the knock test, ripe/unripe/overripe, the dry season, dropped vs. cut fruit, grafting, orchard, grower, middleman, and farming community — plus confirmation of ឪខាក់ (Ov Khak), សាដង់កិត (Sadong Kit), and ដើមទុរេន/ដើម (durian tree, full and short form) as spoken locally. Provided directly for this project, not drawn from a publication.",
       },
       {
-        name: "The curator's parents, durian growers at Teuk Chhou, Kampot — grower interviews, 1 and 4 September 2026",
-        note: "First-hand answers from the two growers who own and work the orchard, given on 1 September 2026. They asked not to be named, so the relationship and the date are recorded here instead of a name. The interview covers reading ripeness (the stem-joint swelling, the thorn-tip color change, and the knock-test sound); the rule against spraying anything into the canopy while the trees are in flower; why Sadong Kit has become rare to grow and sell (short harvest window, poor transportability once ripe, lower yield, and a post-war shift toward Monthong and Musang King as cash crops), and what it tastes like; the orchard’s own size and variety split — a couple of hundred trees, roughly a hundred Ov Khak, fifty Monthong, fifty Sadong Kit, and fifteen grafted Musang King; and adapting to the 2024 drought (extended dry season disrupting flowering, and the resulting irrigation, mulching, and shade-netting changes). A second, much longer sitting on 4 September 2026 answered 220 questions across every entry in the guide, and is the source of most of the first-hand material now on the site: the tapping stick and the full sound scale; the days from petal drop to harvest for all four varieties, a figure that had not previously been written down anywhere this project could find; the flavour, sub-types and grafting requirement of Ov Khak; the harvest window and spoilage rate of Sadong Kit; Monthong's arrival in Kampot and why it was planted; the 2021 Musang King top-working and its failure rate; the mechanics of counterfeit relabeling and the farm-gate-to-retail price spread; the 2024 drought in detail and the 2014 flood; the orchard year month by month; and the export protocol as it looks from a two-hectare farm. Three things about that material should be read with it. Prices given are peak-season farm-gate figures and can fall by roughly half when the market is tight. Tree counts are estimates and are given as such — the growers keep no exact tally, since trees die and are replanted continuously. And where the growers' observation disagrees with a published study, as it does over whether moths pollinate durian, both are printed and neither is quietly dropped. The growers also asked that the location of the farm's water source not be published, and it is not. Provided directly for this project, not drawn from a publication.",
+        name: "The curator's parents, durian growers at Teuk Chhou, Kampot — grower interview, 1 September 2026",
+        note: "First-hand answers from the two growers who own and work the orchard. They asked not to be named, so the relationship, the place and the date are recorded here instead of a name. This first sitting covers reading ripeness (the stem-joint swelling, the thorn-tip colour change, and the knock-test sound); the rule against spraying anything into the canopy while the trees are in flower; why Sadong Kit has become rare to grow and sell, and what it tastes like; the orchard's own size and variety split; and adapting to the 2024 drought. Provided directly for this project, not drawn from a publication.",
+      },
+      {
+        name: "The curator's parents, durian growers at Teuk Chhou, Kampot — grower interview, 4 September 2026",
+        note: "A second and much longer sitting: 220 questions across every entry in the guide, and the source of most of the first-hand material on this site. It covers the tapping stick and the full sound scale; the days from petal drop to harvest for all four varieties, a figure this project could not find written down anywhere else; the flavour, sub-types and grafting requirement of Ov Khak; the harvest window and spoilage rate of Sadong Kit; Monthong's arrival in Kampot and why it was planted; the 2021 Musang King top-working and its failure rate; the mechanics of counterfeit relabeling and the farm-gate-to-retail price spread; the 2024 drought in detail and the 2014 flood; the orchard year month by month; and the export protocol as it looks from a two-hectare farm. Three cautions travel with it. Prices are peak-season farm-gate figures and can fall by roughly half in a tight market. Tree counts are the growers' own estimates — they keep no exact tally, since trees die and are replanted continuously. And where their observation disagrees with a published study, as it does over whether moths pollinate durian, both are printed and neither is quietly dropped. The growers asked that the location of the farm's water source not be published, and it is not. Provided directly for this project, not drawn from a publication.",
       },
     ],
   },
@@ -97,7 +101,7 @@ export const sourceGroups = [
       },
       {
         name: "Aziz et al. (2017) — Ecology and Evolution 7(21), 8670\u20138684",
-        note: "\u201cPollination by the locally endangered island flying fox (Pteropus hypomelanus) enhances fruit production of the economically important durian.\u201d Source for Fig. 02: flowers open around 16:15 and the corolla drops between 01:00 and 02:00; only bats were found to be mutualists, while bees acted largely as pollen robbers and moths were barely recorded.",
+        note: "\u201cPollination by the locally endangered island flying fox (Pteropus hypomelanus) enhances fruit production of the economically important durian.\u201d Source for Fig. 02: flowers open around 16:15 and the corolla drops between 01:00 and 02:00; only bats were found to be mutualists, while bees acted largely as pollen robbers and moths were barely recorded. Fig. 02 sets this against the growers’ own account, which puts hawk moths on the flowers as well; the disagreement is printed rather than resolved.",
         url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677486/",
       },
       {
@@ -114,9 +118,9 @@ export const sourceGroups = [
   },
 ];
 
-/* Photograph credits. `own` marks the curator's own work — those are the only
-   primary material on the site, and they are credited as such rather than
-   being passed off as, or hidden among, the licensed Wikimedia images. */
+/* Photograph credits. `own` marks the curator's own work — primary material,
+   like the grower interviews above, and credited as such rather than being
+   passed off as, or hidden among, the licensed Wikimedia images. */
 export const photoCredits = [
   {
     file: "ov-khak-opened.jpg",
@@ -172,4 +176,4 @@ export const photoCredits = [
 ];
 
 export const method =
-  "Compiled from published agricultural research, regional news reporting, official ASEAN trade standards, and interviews with growers in the curator's family.";
+  "Compiled from published horticultural research, regional news reporting, the official ASEAN trade standard for durian, and recorded interviews with growers in the curator's family.";

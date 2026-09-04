@@ -12,7 +12,7 @@ import SectionLabel from "../components/SectionLabel.js";
 const MASTHEAD = [
   { k: "Compiled by", v: collection.curator },
   { k: "Province", v: `${collection.province}, Cambodia` },
-  { k: "Method", v: "Published research, and growers asked directly" },
+  { k: "Method", v: "Published research and primary grower interviews" },
 ];
 
 /* Three entries that between them cover the whole guide: a native variety,
@@ -24,14 +24,12 @@ const FEATURED = ["ov-khak", "a-name-worth-protecting", "when-the-rain-doesnt-co
 /* Drawn from Fig. 05 — the line the guide's honesty rests on. It is the
    guide's own sentence, not anyone's quoted words. */
 const PULL_QUOTE = {
-  text: "A variety that officially exists and is functionally undocumented.",
+  text: "Listed in the trade standard. Described nowhere.",
   attribution: "Sadong Kit: The Undocumented Variety",
   href: "/field-notes/sadong-kit",
 };
 
 export default function Home() {
-  const open = fieldNotes.filter((n) => n.status === "in-progress").length;
-
   return (
     <>
       <a className="skip" href="#entries">Skip to the entries</a>
@@ -94,10 +92,6 @@ export default function Home() {
               <Reveal as="article" className="tile">
                 <p className="tile-label">Entries compiled</p>
                 <p className="stat-num">{fieldNotes.length}</p>
-                <p className="body-copy">
-                  {open} of them marked in progress, because the published
-                  record on those is genuinely thin.
-                </p>
               </Reveal>
               <Reveal as="article" className="tile" delay={90}>
                 <p className="tile-label">Compiled from</p>
@@ -128,16 +122,18 @@ export default function Home() {
                   key={note.slug}
                   note={note}
                   variant={i === 0 ? "lead" : "plain"}
+                  showNumber={false}
                   delay={i * 80}
                 />
               ))}
             </div>
             <Reveal>
               <p className="body-copy note-foot">
-                The other {fieldNotes.length - FEATURED.length} entries cover
-                ripeness, flowering, the varieties grown in Kampot, and the
-                season itself —{" "}
-                <Link href="/field-notes">read all {fieldNotes.length}</Link>.
+                The remaining {fieldNotes.length - FEATURED.length} entries
+                cover ripeness and harvest, flowering and pollination, the
+                varieties under cultivation in Kampot, and the season that
+                governs them all.{" "}
+                <Link href="/field-notes">Read the complete field notes</Link>.
               </p>
             </Reveal>
           </div>
@@ -161,10 +157,11 @@ export default function Home() {
                 Mostly in one district.
               </h2>
               <p className="sub">
-                Kampot grows something like 1,300 hectares of durian, and most
-                of what carries the province's name comes from one district
-                west of the town — where the soil is river-laid, the water is
-                close, and the season is shifting with the rain.
+                Kampot's name carries a premium no other Cambodian durian
+                commands — enough that fruit is trucked in from elsewhere and
+                relabelled to borrow it. Most of what legitimately holds the
+                name comes from a single district west of the town, where the
+                orchards sit on slopes fed by water off the Elephant Mountains.
               </p>
               <p className="cta-row">
                 <Link className="link" href="/region">Read the region</Link>
@@ -189,9 +186,13 @@ export default function Home() {
             <Reveal>
               <SectionLabel no="04">How this was made</SectionLabel>
               <p className="reading-body">
-                {method} It is secondary research, and every entry lists what it
-                rests on. More on <Link href="/about">About the Project</Link>,
-                and the full bibliography on{" "}
+                {method} It is secondary research with one first-hand seam
+                running through it, and the two are kept visibly apart: every
+                entry lists the sources it rests on, and where a claim comes
+                from the growers rather than the literature, it says so. Where
+                the two disagree, both are printed. The method is set out in
+                full on <Link href="/about">About the Project</Link>; the
+                complete bibliography is on{" "}
                 <Link href="/sources">Sources &amp; Credits</Link>.
               </p>
             </Reveal>

@@ -10,8 +10,10 @@ export const metadata = {
     "Kampot's durian belt: Teuk Chhou district, the scale of the crop, and the climate pressure on it.",
 };
 
-/* Figures are reported ranges from published coverage, not a single survey —
-   the page says so rather than presenting them as one clean dataset. */
+/* Two national figures from one government series, and the single orchard this
+   guide's first-hand material actually comes from. A 2020 provincial estimate
+   used to sit in the third slot; it was six years old, never restated, and
+   carried on one news report, so it was dropped rather than dressed up. */
 const FIGURES = [
   {
     h: "National area, 2025",
@@ -24,9 +26,9 @@ const FIGURES = [
     p: "The 2021 baseline, at 36,656 tonnes. The crop has roughly tripled in area since.",
   },
   {
-    h: "Kampot province",
-    v: "~1,300 ha",
-    p: "940 hectares of it harvested, yielding about 12,280 tonnes a year — a 2020 provincial figure, and likely low today.",
+    h: "This guide's orchard",
+    v: "~2 ha",
+    p: "Roughly 215 trees in four varieties at Teuk Chhou — the farm behind every first-hand claim in this guide. The growers keep no exact tally, so the count is their own estimate.",
   },
 ];
 
@@ -104,7 +106,7 @@ export default function Region() {
           <div className="inner">
             <Reveal>
               <SectionLabel no="04">The scale</SectionLabel>
-              <h2 className="headline-sm">How much fruit this is.</h2>
+              <h2 className="headline-sm">The crop, and one orchard inside it.</h2>
             </Reveal>
             <Reveal className="specs">
               {FIGURES.map((f) => (
@@ -117,9 +119,8 @@ export default function Region() {
             </Reveal>
             <Reveal>
               <p className="body-copy note-foot">
-                These come from different sources and different years — the
-                national figures from the Department of Long-Term Crop
-                Development via{" "}
+                The national figures come from the Department of Long-Term Crop
+                Development, reported by{" "}
                 <a
                   href="https://cambodianess.com/article/cambodias-durian-exports-to-china-surge-nearly-40-fold-as-new-rail-corridor-speeds-trade"
                   target="_blank"
@@ -127,17 +128,11 @@ export default function Region() {
                 >
                   Cambodianess
                 </a>
-                , the provincial one from{" "}
-                <a
-                  href="https://www.khmertimeskh.com/50721478/durian-lovers-to-feast-on-kampot-durians/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Khmer Times, May 2020
-                </a>
-                . The Kampot number is six years old and has not been restated
-                since; against national growth of that speed, treat it as a
-                floor rather than a current count.
+                . There is no current figure for Kampot province specifically:
+                the most recent one this guide could find dates from 2020, rests
+                on a single news report, and has not been restated since, so it
+                is not published here. The orchard figures are the growers' own,
+                given in interview — one farm, and not a sample of anything.
               </p>
             </Reveal>
           </div>
@@ -149,17 +144,29 @@ export default function Region() {
               <SectionLabel no="05">The pressure</SectionLabel>
               <h2 className="headline-sm">What is changing now.</h2>
               <p className="reading-body">
-                Roughly 30 percent of Teuk Chhou district's 100 hectares of
-                durian has been affected by heat and drought, according to the
-                head of the local farming community. The orchards sit on slopes
-                and draw on water running off the mountains; when that dries up,
-                fruit fails to reach size and drops early, and what survives
-                ripens too fast to taste right. It is a live thread, not a
-                settled finding — the full entry is{" "}
+                In 2024 this belt had its worst season in living memory, and one
+                orchard's account of it is specific: 43°C in May, the mountain
+                stream gone by late March, leaves wilting by nine each morning.
+                Four mature trees died when their roots dried out, about a
+                quarter of the season's fruit weight was lost to early abortion,
+                and the water level in the farm's own well fell close to three
+                metres. The rains that normally arrive in the first week of May
+                did not reach the trees until mid-June.
+              </p>
+              <p className="reading-body">
+                How far that extends across the district is harder to say. The
+                head of the local farming community has put roughly 30 percent
+                of Teuk Chhou's durian as affected by heat and drought — the
+                only district-wide estimate this guide has found, and an
+                estimate rather than a survey. What is not in question is the
+                mechanism: these orchards sit on slopes and drink what runs off
+                the mountains, so when that fails there is nothing behind it.
+                Fruit stops reaching size and drops early, and what survives
+                ripens too fast to taste right.{" "}
                 <Link href="/field-notes/when-the-rain-doesnt-come">
-                  Fig. 09, When the Rain Doesn't Come
+                  Read the full entry on the drought
                 </Link>
-                .
+                , which follows one family through the last three seasons of it.
               </p>
             </Reveal>
           </div>

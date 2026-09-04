@@ -2,11 +2,15 @@ import Link from "next/link";
 import collection from "../collection.config.js";
 import DurianGlyph from "./DurianGlyph.js";
 
-/* The four destinations of the guide. Home is the logo, so it is not
-   repeated in the list. */
+/* The destinations of the guide. Home is the logo, so it is not repeated in
+   the list. Search points at the Field Notes index, where the one search box
+   lives; the #search hash tells it to focus the input on arrival. Keeping the
+   box on that one page is deliberate — a box in the nav would make this a
+   client component and ship the search index on every page of the site. */
 const LINKS = [
   { href: "/region", label: "The Region", small: true },
   { href: "/field-notes", label: "Field Notes", small: false },
+  { href: "/field-notes#search", label: "Search", small: false },
   { href: "/about", label: "About", small: true },
   { href: "/sources", label: "Sources", small: true },
 ];

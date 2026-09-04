@@ -10,9 +10,10 @@ export default function SiteFooter() {
       <div className="foot-inner">
         <p className="foot-fine">
           A student field guide built for ICT 340 — Vibe Coding at the American
-          University of Phnom Penh, Fall 2026. Compiled from published sources;
-          see <Link href="/sources">Sources &amp; Credits</Link>. In progress
-          all semester. Photographs:{" "}
+          University of Phnom Penh, Fall 2026. Compiled from published sources
+          and from interviews with growers in the curator's family; see{" "}
+          <Link href="/sources">Sources &amp; Credits</Link>. In progress all
+          semester. Photographs:{" "}
           {photoCredits.map((credit, i) => (
             <span key={credit.file}>
               {i > 0 ? "; " : ""}

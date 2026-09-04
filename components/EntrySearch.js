@@ -1,87 +1,90 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import EntryCard from "./EntryCard.js";
+import SearchBox from "./SearchBox.js";
 import SearchEmpty from "./SearchEmpty.js";
+import Pagination from "./Pagination.js";
 import { buildIndex, search, isQuery } from "../content/search-index.js";
-
-/* Card treatment repeats every five entries rather than every one, so the
-   index reads as a laid-out page instead of a list of identical blocks. */
-const VARIANTS = ["lead", "plain", "brief", "brief", "plain"];
-
-/* Positions 2 and 3 of that cycle are the paired half-width cards. A filtered
-   result can stop on position 2, leaving its partner unrendered and half the
-   row empty — search "ov khak" (3 results) and you would see it. A dangling
-   first-of-pair is promoted to full width so every result set ends flush. */
-function variantFor(i, total) {
-  const v = VARIANTS[i % VARIANTS.length];
-  const dangling = v === "brief" && i % VARIANTS.length === 2 && i === total - 1;
-  return dangling ? "plain" : v;
-}
+import { variantFor, pageCount, PER_PAGE } from "../content/card-variants.js";
 
 export default function EntrySearch({ notes }) {
   const [query, setQuery] = useState("");
+  const [page, setPage] = useState(1);
+  const inputRef = useRef(null);
+  const topRef = useRef(null);
 
   const index = useMemo(() => buildIndex(notes), [notes]);
   const shown = useMemo(() => search(index, query), [index, query]);
   const searching = isQuery(query);
 
+  const pages = searching ? 1 : pageCount(shown.length);
+  const safePage = Math.min(page, Math.max(pages, 1));
+  const paged = searching
+    ? shown
+    : shown.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
+
+  /* Focus the box when arrived at from the nav's Search link. Also listens for
+     the hash changing, since Next does not remount the page when you follow
+     /field-notes#search while already on /field-notes. */
+  useEffect(() => {
+    const focus = () => {
+      if (window.location.hash === "#search") inputRef.current?.focus();
+    };
+    focus();
+    window.addEventListener("hashchange", focus);
+    return () => window.removeEventListener("hashchange", focus);
+  }, []);
+
+  /* A new query starts at the first page, or the reader lands on an empty
+     page 2 of a result set that now has three matches. */
+  function onQuery(next) {
+    setQuery(next);
+    setPage(1);
+  }
+
+  /* Back to the top of the list on a page change — otherwise the reader keeps
+     the scroll position of the last card and appears to have gone nowhere. */
+  function onPage(next) {
+    setPage(next);
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <>
-      <div className="search">
-        <label className="search-label" htmlFor="entry-search">
-          Search the entries
-        </label>
-        <div className="search-field">
-          <input
-            id="entry-search"
-            className="search-input"
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="A variety, a Khmer term, a subject — ទុរេន, Ov Khak, harvest"
-            autoComplete="off"
-            spellCheck="false"
-            aria-describedby="entry-search-count"
-          />
-          {/* Always rendered, disabled when there is nothing to clear: showing
-              it only once you type would resize the input on the first
-              keystroke, under the cursor. */}
-          <button
-            type="button"
-            className="search-clear"
-            onClick={() => setQuery("")}
-            disabled={!query}
-          >
-            Clear
-          </button>
-        </div>
-        {/* Announced to screen readers on every change, not just on submit. */}
-        <p
-          className="search-count"
-          id="entry-search-count"
-          role="status"
-          aria-live="polite"
-        >
-          {searching
+      <span ref={topRef} aria-hidden="true" />
+      <SearchBox
+        value={query}
+        onChange={onQuery}
+        inputRef={inputRef}
+        count={
+          searching
             ? `${shown.length} of ${notes.length} entries`
-            : `${notes.length} entries`}
-        </p>
-      </div>
+            : `${notes.length} entries · page ${safePage} of ${pages}`
+        }
+      />
 
       {shown.length > 0 ? (
-        <div className="entry-list">
-          {shown.map((note, i) => (
-            <EntryCard
-              key={note.slug}
-              note={note}
-              variant={variantFor(i, shown.length)}
-              delay={(i % 3) * 70}
-            />
-          ))}
-        </div>
+        <>
+          <div className="entry-list">
+            {paged.map((note, i) => (
+              <EntryCard
+                key={note.slug}
+                note={note}
+                variant={variantFor(i, paged.length)}
+                delay={(i % 3) * 70}
+              />
+            ))}
+          </div>
+          <Pagination
+            page={safePage}
+            pages={pages}
+            onChange={onPage}
+            label="Field note pages"
+          />
+        </>
       ) : (
-        <SearchEmpty query={query} total={notes.length} onClear={() => setQuery("")} />
+        <SearchEmpty query={query} total={notes.length} onClear={() => onQuery("")} />
       )}
     </>
   );
